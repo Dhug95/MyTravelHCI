@@ -48,6 +48,9 @@ public class MainActivity extends FragmentActivity {
         mPager = (ViewPager) findViewById(R.id.mPager);
         pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(pagerAdapter);
+
+        WormDotsIndicator wormDotsIndicator = (WormDotsIndicator) findViewById(R.id.worm_dots_indicator);
+        wormDotsIndicator.setViewPager(mPager);
     }
 
     @Override
