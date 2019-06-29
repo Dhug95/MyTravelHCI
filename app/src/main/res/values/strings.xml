@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">My Travel HCI</string>
+    <string name="home_slide_first">Share your trips with your friends and have a good time with them!</string>
+    <string name="home_slide_second">Problems with your spending? MyTravel can help you to organise everything!</string>
+    <string name="home_slide_third">Don\'t forget any of your items - add them in a list!</string>
+    <string name="start_button">Start now</string>
+    <string name="trips">Trips</string>
+    <string name="money">Money</string>
+    <string name="list">List</string>
+    <string name="log_in">Log in</string>
+    <string name="already_registered">Already registered?</string>
+    <string name="email_signup">Sign up by email</string>
+    <string name="facebook_signup">Connect by facebook</string>
+    <string name="google_signup">Connect by Google</string>
+    <string name="app_main_logo">App main logo</string>
+    <string name="list_description">Make a list of what you need</string>
+    <string name="money_description">Share your money with friends</string>
+    <string name="trip_description">The world of our trips</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
