@@ -3,16 +3,16 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/customGreen</item>
+        <item name="colorPrimaryDark">@color/customGreenDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <!-- Base application theme. -->
     <style name="Theme.Shrine" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/customGreen</item>
+        <item name="colorPrimaryDark">@color/customGreenDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -27,7 +27,7 @@
     </style>
 
     <style name="Widget.Shrine.FacebookButton" parent="Widget.MaterialComponents.Button">
-        <item name="backgroundTint">@color/fbColor</item>
+        <item name="backgroundTint">@color/colorFacebook</item>
     </style>
 
     <style name="Widget.Shrine.GoogleButton" parent="Widget.MaterialComponents.Button">

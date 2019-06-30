@@ -12,25 +12,12 @@
         android:layout_gravity="center"
         android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_width="108dp"
-                android:layout_height="108dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:contentDescription="@string/list_description"
-                android:src="@drawable/list"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/tickets_description"
+            android:src="@drawable/tickets_192" />
 
         <TextView
             android:layout_width="match_parent"
@@ -39,7 +26,7 @@
             android:layout_marginTop="@dimen/android_vertical_padding"
             android:gravity="center"
             android:lineSpacingMultiplier="1.2"
-            android:text="@string/list"
+            android:text="@string/tickets"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
             android:textStyle="bold" />
 
@@ -51,6 +38,6 @@
             android:gravity="center"
             android:lineSpacingMultiplier="1.2"
             android:text="@string/home_slide_third"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
     </LinearLayout>
 </ScrollView>

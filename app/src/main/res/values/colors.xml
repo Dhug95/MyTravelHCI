@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#01AA71</color>
-    <color name="colorPrimaryDark">#008858</color>
+    <color name="customGreen">#01AA71</color>
+    <color name="customGreenDark">#008858</color>
+    <color name="customRed">#d50000</color>
+    <color name="customRedDark">#9b0000</color>
+    <color name="mainRed">#C20000</color>
+    <color name="mainBlue">#1A2E45</color>
     <color name="colorAccent">#0076FE</color>
     <color name="toolbarIconColor">#FFFFFF</color>
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#FFFFFF</color>
-    <color name="fbColor">#3B5999</color>
-    <color name="main_red_app">#C20000</color>
-    <color name="main_blue_app">#1A2E45</color>
-    <color name="white">#FFFFFF</color>
-
+    <color name="colorFacebook">#3B5999</color>
 </resources>
