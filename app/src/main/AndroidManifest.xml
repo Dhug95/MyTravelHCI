@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shrine">
-        <activity android:name=".activity.SignupPage"></activity>
         <activity android:name=".activity.HomePageActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
@@ -18,6 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.SignupPage" />
         <activity android:name=".activity.Currency" />
     </application>
 
