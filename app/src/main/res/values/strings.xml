@@ -16,4 +16,5 @@
     <string name="tickets_description">Manage all your tickets</string>
     <string name="money_description">Share your money with friends</string>
     <string name="trip_description">The world of our trips</string>
+    <string name="convert">convert_button</string>
 </resources>
