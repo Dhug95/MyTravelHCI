@@ -3,8 +3,7 @@ package com.example.mytravelhci.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+
 
 import com.example.mytravelhci.R;
 import com.google.android.material.snackbar.Snackbar;
@@ -18,7 +17,7 @@ public class Currency extends AppCompatActivity {
         setContentView(R.layout.activity_currency);
 
         MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.spinner);
-        spinner.setItems("Ice Cream Sandwich", "Jelly Bean", "KitKat", "Lollipop", "Marshmallow");
+        spinner.setItems("EUR", "USD", "GBP", "JPY");
         spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
 
             @Override
@@ -26,5 +25,16 @@ public class Currency extends AppCompatActivity {
                 Snackbar.make(view, "Clicked " + item, Snackbar.LENGTH_LONG).show();
             }
         });
+
+        MaterialSpinner spinner2 = (MaterialSpinner) findViewById(R.id.spinner2);
+        spinner2.setItems("EUR", "USD", "GBP", "JPY");
+        spinner2.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+
+            @Override
+            public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
+                Snackbar.make(view, "Clicked " + item, Snackbar.LENGTH_LONG).show();
+            }
+        });
+
     }
 }

@@ -18,6 +18,14 @@
     <string name="trip_description">The world of our trips</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string-array name="currency_array">
+        <item>EUR</item>
+        <item>USD</item>
+        <item>GBP</item>
+        <item>JPY</item>
+
+    </string-array>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
