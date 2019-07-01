@@ -9,10 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shrine">
-        <activity android:name=".activity.SignupPage"></activity>
-        <activity android:name=".activity.HomePageActivity" />
-        <activity android:name=".activity.Currency"
-                  android:exported="true"></activity>
+        <activity
+            android:name=".activity.LoggedActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".activity.SignupPage"
+            android:parentActivityName=".activity.HomePageActivity" />
+        <activity android:name=".activity.HomePageActivity"></activity>
+        <activity
+            android:name=".activity.Currency"
+            android:exported="true"></activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

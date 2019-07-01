@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/customGray"
     android:padding="@dimen/android_default_padding"
     tools:context=".activity.HomePageActivity">
 
     <com.google.android.material.card.MaterialCardView
-        style="@style/Widget.MaterialComponents.CardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:minHeight="200dp"
-        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -24,36 +23,55 @@
             android:layout_gravity="center"
             android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <ImageView
+                android:id="@+id/app_logo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:hint="@string/email">
+                android:contentDescription="@string/app_main_logo"
+                android:src="@drawable/main_bianca_256"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintBottom_toTopOf="@+id/google_login_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:hint="Name">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress" />
+                    android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:hint="@string/password">
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:hint="Name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword" />
+                    android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
         </LinearLayout>
-
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -66,9 +84,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:padding="8dp"
         android:onClick="goCurrency"
+        android:padding="8dp"
         android:text="@string/google_signup"
+        app:cornerRadius="50dp"
         app:icon="@drawable/ic_google_logo_24"
         app:layout_constraintBottom_toTopOf="@+id/fb_login_btn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,6 +103,7 @@
         android:layout_marginBottom="8dp"
         android:padding="8dp"
         android:text="@string/facebook_signup"
+        app:cornerRadius="50dp"
         app:icon="@drawable/ic_facebook_white_logo_24"
         app:layout_constraintBottom_toTopOf="@+id/email_signup_btn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,6 +120,7 @@
         android:onClick="goToSignup"
         android:padding="8dp"
         android:text="@string/email_signup"
+        app:cornerRadius="50dp"
         app:icon="@drawable/ic_email_white_24dp"
         app:layout_constraintBottom_toTopOf="@+id/go_login_btn"
         app:layout_constraintEnd_toEndOf="parent"

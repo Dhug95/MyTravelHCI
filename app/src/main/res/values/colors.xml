@@ -7,6 +7,7 @@
     <color name="mainRed">#C20000</color>
     <color name="mainBlue">#1A2E45</color>
     <color name="colorAccent">#0076FE</color>
+    <color name="customGray">#EEEEEE</color>
     <color name="toolbarIconColor">#FFFFFF</color>
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#FFFFFF</color>
