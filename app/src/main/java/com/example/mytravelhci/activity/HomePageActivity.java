@@ -25,4 +25,9 @@ public class HomePageActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Currency.class);
         startActivity(intent);
     }
+
+    public void goToProfile(View view) {
+        Intent intent = new Intent(this, ProfilePage.class);
+        startActivity(intent);
+    }
 }

@@ -11,4 +11,7 @@
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#FFFFFF</color>
     <color name="colorFacebook">#3B5999</color>
+    <color name="hintGray">#888888</color>
+
+
 </resources>

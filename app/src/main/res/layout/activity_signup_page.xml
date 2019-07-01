@@ -89,6 +89,34 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/currencySpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/signupButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confpassword"
+        app:layout_constraintVertical_bias="0.278" />
+
+    <TextView
+        android:id="@+id/currencyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Your currency:"
+        app:layout_constraintBottom_toTopOf="@+id/signupButton"
+        app:layout_constraintEnd_toStartOf="@+id/currencySpinner"
+        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confpassword"
+        app:layout_constraintVertical_bias="0.311" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signupButton"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -105,29 +133,5 @@
         app:layout_constraintTop_toBottomOf="@+id/confpassword"
         app:strokeColor="@color/customGreen"
         app:strokeWidth="2dp" />
-
-    <fr.ganfra.materialspinner.MaterialSpinner
-        android:id="@+id/currencySpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/signupButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confpassword"
-        app:ms_alignLabels="false"
-        app:ms_arrowColor="@color/colorAccent"
-        app:ms_arrowSize="16dp"
-        app:ms_baseColor="@color/colorAccent"
-        app:ms_enableErrorLabel="false"
-        app:ms_enableFloatingLabel="false"
-        app:ms_floatingLabelText="floating label"
-        app:ms_highlightColor="@color/colorAccent"
-        app:ms_multiline="false"
-        app:ms_thickness="2dp"
-        app:ms_typeface="typeface.ttf" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
