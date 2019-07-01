@@ -8,6 +8,7 @@
     android:clipChildren="false"
     android:clipToPadding="false"
     android:padding="@dimen/android_default_padding"
+    android:theme="@style/Theme.Shrine.NoActionBar"
     tools:context=".activity.MainActivity">
 
     <androidx.viewpager.widget.ViewPager
@@ -27,6 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/android_default_padding"
+        android:onClick="startHome"
         android:text="@string/start_button"
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +50,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline" />
-
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

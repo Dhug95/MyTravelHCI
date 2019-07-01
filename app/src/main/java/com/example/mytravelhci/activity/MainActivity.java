@@ -65,6 +65,12 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
+    public void startHome(View view) {
+        Intent intent = new Intent(this, HomePageActivity.class);
+        startActivity(intent);
+    }
+
+
     /**
      * A simple pager adapter that represents 3 HomeSlide objects, in
      * sequence.
