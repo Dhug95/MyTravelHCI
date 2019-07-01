@@ -16,8 +16,8 @@ public class HomePageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
     }
 
-    public void goLogIn(View view) {
-        Intent intent = new Intent(this, LogInActivity.class);
+    public void goToSignup(View view){ //In realtà dovrebbe andare nella LoggedHome
+        Intent intent = new Intent(this, SignupPage.class);
         startActivity(intent);
     }
 }
