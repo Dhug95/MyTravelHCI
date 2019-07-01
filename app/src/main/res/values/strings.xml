@@ -16,4 +16,9 @@
     <string name="tickets_description">Manage all your tickets</string>
     <string name="money_description">Share your money with friends</string>
     <string name="trip_description">The world of our trips</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
