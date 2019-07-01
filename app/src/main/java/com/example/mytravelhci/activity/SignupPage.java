@@ -8,16 +8,16 @@ import android.view.View;
 
 import com.example.mytravelhci.R;
 
-public class HomePageActivity extends AppCompatActivity {
+public class SignupPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
+        setContentView(R.layout.activity_signup_page);
     }
 
-    public void goToSignup(View view){ //In realtà dovrebbe andare nella LoggedHome
-        Intent intent = new Intent(this, SignupPage.class);
+    public void startHome(View view) {
+        Intent intent = new Intent(this, HomePageActivity.class);
         startActivity(intent);
     }
 }
