@@ -16,8 +16,8 @@ public class EditTrip extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_trip);
 
-        MaterialButton departingButton = (MaterialButton) findViewById(R.id.departingButton);
-        MaterialButton returnButton = (MaterialButton) findViewById(R.id.returnButton);
+        MaterialButton departingButton = findViewById(R.id.departingButton);
+        MaterialButton returnButton = findViewById(R.id.returnButton);
 
         departingButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,9 +36,9 @@ public class EditTrip extends AppCompatActivity {
     }
 
     public void showDatePicker(View view) {
-        Integer iddio = Integer.valueOf(view.getId());
+        Integer id = Integer.valueOf(view.getId());
         DatePickerFragment newFragment = new DatePickerFragment();
-        newFragment.show(getSupportFragmentManager(), iddio.toString());
+        newFragment.show(getSupportFragmentManager(), id.toString());
     }
 
     public void processDatePickerResult(int year, int month, int day, String id) {
@@ -50,12 +50,12 @@ public class EditTrip extends AppCompatActivity {
 
         switch(Integer.parseInt(id)){
             case R.id.departingButton:{
-                EditText departing = (EditText) findViewById(R.id.departing);
+                EditText departing =  findViewById(R.id.departing);
                 departing.setText(dateMessage);
                 break;
             }
             case R.id.returnButton:{
-                EditText arrival = (EditText) findViewById(R.id.arrival);
+                EditText arrival =  findViewById(R.id.arrival);
                 arrival.setText(dateMessage);
                 break;
             }
