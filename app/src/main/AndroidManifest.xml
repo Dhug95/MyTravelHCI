@@ -9,15 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shrine">
+        <activity android:name=".activity.EditTrip"></activity>
         <activity
             android:name=".activity.NotLoggedHomeActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".activity.SignupPage"
             android:parentActivityName=".activity.NotLoggedHomeActivity" />
         <activity
             android:name=".activity.Currency"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.AddTrip">
+    tools:context=".activity.EditTrip">
 
     <ImageView
         android:id="@+id/imageView"
@@ -121,34 +121,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/departing" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/graybar"
-        app:srcCompat="@drawable/participants" />
-
     <TextView
         android:id="@+id/participantsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:text="Add participants"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Participants"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/graybar" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/addParticipantEditText"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="274dp"
         android:layout_height="61dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="140dp"
         android:hint="Username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/participantsLabel">
@@ -186,9 +177,64 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/android_default_padding"
         android:layout_marginTop="47dp"
-        android:text="Add"
+        android:text="Edit"
         android:textColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@+id/addParticipantEditText"
         app:strokeWidth="2dp"
         tools:layout_editor_absoluteX="180dp" />
+
+    <ImageView
+        android:id="@+id/participant1Image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/participantsLabel"
+        tools:srcCompat="@tools:sample/avatars[13]" />
+
+    <TextView
+        android:id="@+id/participant1Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Creator"
+        app:layout_constraintBottom_toBottomOf="@+id/participant1Image"
+        app:layout_constraintStart_toEndOf="@+id/participant1Image"
+        app:layout_constraintTop_toTopOf="@+id/participant1Image" />
+
+    <ImageView
+        android:id="@+id/participant2Image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/participant1Image"
+        tools:srcCompat="@tools:sample/avatars[15]" />
+
+    <TextView
+        android:id="@+id/participant2Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Bruno"
+        app:layout_constraintBottom_toBottomOf="@+id/participant2Image"
+        app:layout_constraintStart_toEndOf="@+id/participant2Image"
+        app:layout_constraintTop_toTopOf="@+id/participant2Image" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/removeParticipantButton"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/android_default_padding"
+        android:layout_marginStart="8dp"
+        app:backgroundTint="@android:color/background_dark"
+        app:icon="@drawable/ic_cross_red_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/participant2Image"
+        app:layout_constraintStart_toEndOf="@+id/participant2Label"
+        app:layout_constraintTop_toTopOf="@+id/participant2Image" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
