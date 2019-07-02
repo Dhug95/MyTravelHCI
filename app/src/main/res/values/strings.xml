@@ -2,7 +2,7 @@
     <string name="app_name">MyTravelHCI</string>
     <string name="home_slide_first">Create your trips, travel alone or add your friends and have a good time with them!</string>
     <string name="home_slide_second">Keep track of your spending, convert values among differente currencies!</string>
-    <string name="home_slide_third">Look for the best tickets, search for an accomodation and manage your reservations!</string>
+    <string name="home_slide_third">Look for the best tickets, search for an accommodation and manage your reservations!</string>
     <string name="start_button">Start now</string>
     <string name="trips">Share your trip experience</string>
     <string name="money">Manage your money</string>
@@ -23,11 +23,13 @@
         <item>USD</item>
         <item>GBP</item>
         <item>JPY</item>
-
     </string-array>
-
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="not_registered">Not registered?</string>
+    <string name="remember_me">Remember me</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="azzurro">Azzurro</string>
+    <string name="grigio">Grigio</string>
+    <string name="mytravel">MyTravel</string>
+    <string name="register">Register</string>
 </resources>

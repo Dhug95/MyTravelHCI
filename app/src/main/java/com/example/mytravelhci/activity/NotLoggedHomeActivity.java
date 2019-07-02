@@ -9,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.mytravelhci.R;
+import com.mikepenz.materialdrawer.DrawerBuilder;
 
 public class NotLoggedHomeActivity extends FragmentActivity {
 
@@ -27,5 +28,7 @@ public class NotLoggedHomeActivity extends FragmentActivity {
 
 // finally change the color
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.statusColor));
+
+        new DrawerBuilder().withActivity(this).build();
     }
 }
