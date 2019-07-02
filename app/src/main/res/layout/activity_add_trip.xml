@@ -12,9 +12,9 @@
         android:layout_height="107dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="4dp"
+        android:src="@drawable/trip_image"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/trip_image" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/uploadImage"
@@ -77,11 +77,12 @@
         android:layout_height="50dp"
         android:layout_margin="@dimen/android_default_padding"
         android:layout_marginStart="8dp"
+        android:backgroundTint="@color/customGreen"
+        app:backgroundTint="@android:color/background_dark"
+        app:icon="@drawable/date_black_24dp"
         app:layout_constraintBottom_toBottomOf="@+id/departing"
         app:layout_constraintStart_toEndOf="@+id/departing"
-        app:layout_constraintTop_toTopOf="@+id/departing"
-        app:icon="@drawable/date_black_24dp"
-        app:backgroundTint="@android:color/background_dark"/>
+        app:layout_constraintTop_toTopOf="@+id/departing" />
 
     <EditText
         android:id="@+id/arrival"
@@ -102,12 +103,13 @@
         android:layout_height="50dp"
         android:layout_margin="@dimen/android_default_padding"
         android:layout_marginStart="16dp"
+        android:backgroundTint="@color/customGreen"
+        app:backgroundTint="@android:color/background_dark"
+        app:icon="@drawable/date_black_24dp"
         app:layout_constraintBottom_toBottomOf="@+id/arrival"
         app:layout_constraintStart_toEndOf="@+id/arrival"
         app:layout_constraintTop_toTopOf="@+id/arrival"
-        app:layout_constraintVertical_bias="0.6"
-        app:icon="@drawable/date_black_24dp"
-        app:backgroundTint="@android:color/background_dark"/>
+        app:layout_constraintVertical_bias="0.6" />
 
     <View
         android:id="@+id/graybar"
