@@ -28,7 +28,7 @@ public class ProfilePage extends AppCompatActivity {
         bnv.getMenu().getItem(0).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                Intent intent = new Intent( getApplicationContext() , HomePageActivity.class);
+                Intent intent = new Intent(getApplicationContext(), NotLoggedHomeActivity.class);
                 startActivity(intent);
                 return true;
             }
@@ -37,7 +37,7 @@ public class ProfilePage extends AppCompatActivity {
         bnv.getMenu().getItem(1).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                Toast t = Toast.makeText(getApplicationContext(),"a puttan e mammt!",Toast.LENGTH_LONG);
+                Toast t = Toast.makeText(getApplicationContext(), "a puttan e mammt!", Toast.LENGTH_LONG);
                 t.show();
                 return true;
             }
@@ -52,14 +52,14 @@ public class ProfilePage extends AppCompatActivity {
     }
 
     public void startHome(View view) {
-        Toast t = Toast.makeText(getApplicationContext(),"Succesfully logout!",Toast.LENGTH_LONG);
+        Toast t = Toast.makeText(getApplicationContext(), "Succesfully logout!", Toast.LENGTH_LONG);
         t.show();
-        Intent intent = new Intent(this, HomePageActivity.class);
+        Intent intent = new Intent(this, NotLoggedHomeActivity.class);
         startActivity(intent);
     }
 
     public void passwordChanged(View view) {
-        Toast t = Toast.makeText(getApplicationContext(),"Password changed!",Toast.LENGTH_LONG);
+        Toast t = Toast.makeText(getApplicationContext(), "Password changed!", Toast.LENGTH_LONG);
         t.show();
     }
 }

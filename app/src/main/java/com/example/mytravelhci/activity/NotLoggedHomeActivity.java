@@ -10,12 +10,12 @@ import android.view.WindowManager;
 
 import com.example.mytravelhci.R;
 
-public class LoggedActivity extends FragmentActivity {
+public class NotLoggedHomeActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_logged);
+        setContentView(R.layout.activity_not_logged_home);
 
         Window window = this.getWindow();
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/customGray"
-    tools:context=".activity.LoggedActivity">
+    tools:context=".activity.NotLoggedHomeActivity">
 
     <LinearLayout
         android:id="@+id/carmine"
@@ -31,7 +31,7 @@
         android:layout_width="2dp"
         android:layout_height="3dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.50" />
+        app:layout_constraintGuide_percent="0.5" />
 
     <ImageView
         android:id="@+id/app_logo"
@@ -80,6 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:autofillHints=""
             android:background="#FFFFFF"
             android:drawableStart="@drawable/ic_email_gray_24dp"
             android:drawablePadding="@dimen/android_default_padding"
@@ -119,6 +120,18 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+
+    <!--
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/not_registered"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pwd_card" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/google_login_btn"
         style="@style/Widget.Shrine.GoogleButton"
@@ -143,14 +156,31 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="8dp"
         android:padding="8dp"
         android:text="@string/facebook_signup"
         app:cornerRadius="50dp"
         app:icon="@drawable/ic_facebook_white_logo_24"
-        app:layout_constraintBottom_toBottomOf="@+id/carmine"
+        app:layout_constraintBottom_toBottomOf="@+id/email_signup_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/google_login_btn" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/email_signup_btn"
+        style="@style/Widget.Shrine.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:text="@string/email_signup"
+        app:cornerRadius="50dp"
+        app:icon="@drawable/ic_email_white_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/carmine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fb_login_btn" />
+        -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

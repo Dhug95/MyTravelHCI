@@ -66,7 +66,7 @@ public class MainActivity extends FragmentActivity {
     }
 
     public void startHome(View view) {
-        Intent intent = new Intent(this, HomePageActivity.class);
+        Intent intent = new Intent(this, NotLoggedHomeActivity.class);
         startActivity(intent);
     }
 

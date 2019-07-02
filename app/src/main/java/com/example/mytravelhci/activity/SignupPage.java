@@ -34,7 +34,7 @@ public class SignupPage extends AppCompatActivity {
     public void startHome(View view) {
         Toast t = Toast.makeText(getApplicationContext(),"Account created!",Toast.LENGTH_LONG);
         t.show();
-        Intent intent = new Intent(this, HomePageActivity.class);
+        Intent intent = new Intent(this, NotLoggedHomeActivity.class);
         startActivity(intent);
     }
 }
