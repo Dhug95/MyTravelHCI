@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -13,6 +14,9 @@ import android.widget.Toast;
 import com.example.mytravelhci.R;
 import com.google.android.material.snackbar.Snackbar;
 import com.jaredrummler.materialspinner.MaterialSpinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SignupPage extends AppCompatActivity {
 
@@ -22,7 +26,9 @@ public class SignupPage extends AppCompatActivity {
         setContentView(R.layout.activity_signup_page);
 
         MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.currencySpinner);
-        spinner.setItems("EUR", "YEN", "US", "UK", "EQRJH VBOWRINL");
+        spinner.setItems("Select currency", "EUR", "YEN", "US", "UK");
+
+
         /*spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
             @Override
             public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
