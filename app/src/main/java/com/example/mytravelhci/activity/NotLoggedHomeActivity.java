@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.mytravelhci.R;
+import com.mikepenz.iconics.IconicsDrawable;
+import com.mikepenz.iconics.typeface.library.materialdesigniconic.MaterialDesignIconic;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -40,8 +43,14 @@ public class NotLoggedHomeActivity extends FragmentActivity {
                 })
                 .build();
 
+        Drawable email = getDrawable(R.drawable.ic_airplanemode_active_black_24dp);
+
+        SecondaryDrawerItem item2 = new SecondaryDrawerItem().withIdentifier(2).withName(R.string.email)
+                .withIcon(email);
+
         new DrawerBuilder()
                 .withActivity(this)
+                .addDrawerItems(item2)
                 .withAccountHeader(headerResult)
                 .build();
 
