@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shrine">
-        <activity android:name=".activity.EditTrip"></activity>
         <activity
             android:name=".activity.NotLoggedHomeActivity"
             android:exported="true" />
@@ -29,6 +28,13 @@
         <activity
             android:name=".activity.ProfilePage"
             android:exported="true" />
+        <activity
+            android:name=".activity.AddTrip"
+            android:exported="true" />
+        <activity
+            android:name=".activity.EditTrip"
+            android:exported="true" />
+
     </application>
 
 </manifest>

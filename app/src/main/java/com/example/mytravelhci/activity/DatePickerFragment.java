@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,16 +30,6 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         // Required empty public constructor
     }
 
-
-    /*
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        TextView textView = new TextView(getActivity());
-        textView.setText(R.string.hello_blank_fragment);
-        return textView;
-    }*/
-
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -47,13 +38,21 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
-        return new DatePickerDialog(
-                getActivity(), this, year, month, day);
+        return new DatePickerDialog(getActivity(), this, year, month, day);
     }
 
     @Override
     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-        AddTrip activity = (AddTrip) getActivity();
-        activity.processDatePickerResult(year, month, day, getTag());
+        if(getActivity().getClass().toString().contains("AddTrip")) {
+            AddTrip activity = (AddTrip) getActivity();
+            activity.processDatePickerResult(year, month, day, getTag());
+        }
+        else if(getActivity().getClass().toString().contains("EditTrip")){
+            EditTrip activity = (EditTrip) getActivity();
+            activity.processDatePickerResult(year, month, day, getTag());
+        }
+        else{
+
+        }
     }
 }
