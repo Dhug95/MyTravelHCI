@@ -11,8 +11,8 @@
     <!-- Base custom theme. -->
     <style name="Theme.Shrine" parent="Theme.MaterialComponents.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/customGreen</item>
-        <item name="colorPrimaryDark">@color/customGreenDark</item>
+        <item name="colorPrimary">@color/statusColor</item>
+        <item name="colorPrimaryDark">@color/statusColor</item>
         <item name="colorAccent">@color/colorAccent</item>
 
         <!-- No action bar theme. -->

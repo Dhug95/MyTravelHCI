@@ -12,6 +12,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.mytravelhci.R;
+import com.example.mytravelhci.SideMenuClass;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.iconics.typeface.library.materialdesigniconic.MaterialDesignIconic;
 import com.mikepenz.materialdrawer.AccountHeader;
@@ -29,31 +30,7 @@ public class NotLoggedHomeActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_not_logged_home);
 
-        // Create the AccountHeader
-        AccountHeader headerResult = new AccountHeaderBuilder()
-                .withActivity(this)
-                .withHeaderBackground(R.drawable.bg_gradient_nocorn)
-                .addProfiles(
-                        new ProfileDrawerItem().withName("Mike Penz").withEmail("mikepenz@gmail.com").withIcon(getResources().getDrawable(R.drawable.profile))
-                )
-                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
-                    @Override
-                    public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
-                        return false;
-                    }
-                })
-                .build();
-
-        Drawable email = getDrawable(R.drawable.ic_airplanemode_active_black_24dp);
-
-        SecondaryDrawerItem item2 = new SecondaryDrawerItem().withIdentifier(2).withName(R.string.email)
-                .withIcon(email);
-
-        new DrawerBuilder()
-                .withActivity(this)
-                .addDrawerItems(item2)
-                .withAccountHeader(headerResult)
-                .build();
+        new SideMenuClass(this);
 
         Window window = this.getWindow();
 
