@@ -49,4 +49,9 @@ public class NotLoggedHomeActivity extends FragmentActivity {
         Intent intent = new Intent(this, SignupPage.class);
         startActivity(intent);
     }
+
+    public void gotoLoggedHome(View view) {
+        Intent intent = new Intent(this, LoggedHomeActivity.class);
+        startActivity(intent);
+    }
 }
