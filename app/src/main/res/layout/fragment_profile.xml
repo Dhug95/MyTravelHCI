@@ -12,17 +12,17 @@
         android:layout_height="104dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:src="@drawable/main"
+        android:src="@drawable/keanu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="15dp"
+        android:layout_width="134dp"
+        android:layout_height="20dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:text="Name:"
+        android:text="Name: Keanu Reeves"
         app:layout_constraintStart_toEndOf="@+id/profilePicture"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,13 +32,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:text="Email:"
+        android:text="Email: keanu.reeves@gmail.com"
         app:layout_constraintStart_toEndOf="@+id/profilePicture"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <TextView
         android:id="@+id/currencyLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="61dp"
         android:layout_height="18dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
