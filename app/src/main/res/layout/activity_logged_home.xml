@@ -6,6 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".activity.LoggedHomeActivity">
 
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/MyTheme.ActionBarStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/statusColor"
+                app:popupTheme="@style/MyTheme.ActionBarStyle"
+                app:titleTextColor="@color/md_white_1000">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/statusColor"
+                    android:text="MyTravel"
+                    android:textAlignment="center"
+                    android:textColor="@color/md_white_1000"
+                    android:textStyle="bold"
+                    android:textSize="28sp"/>
+            </androidx.appcompat.widget.Toolbar>
+
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
@@ -13,7 +49,7 @@
         app:layout_constraintBottom_toTopOf="@id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/appbar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"

@@ -20,7 +20,7 @@ public class SideMenuClass {
                 .withActivity(activity)
                 .withHeaderBackground(R.drawable.bg_gradient_nocorn)
                 .addProfiles(
-                        new ProfileDrawerItem().withName("Keanu Reeves").withEmail("keanu_reeves@gmail.com")
+                        new ProfileDrawerItem().withName("Keanu Reeves").withEmail("keanu.reeves@gmail.com")
                                 .withIcon(activity.getResources().getDrawable(R.drawable.keanu))
                 )
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
