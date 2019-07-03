@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -65,5 +66,10 @@ public class NotLoggedHomeActivity extends FragmentActivity {
         // finally change the color
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.statusColor));
 
+    }
+
+    public void gotoSignup(View view) {
+        Intent intent = new Intent(this, SignupPage.class);
+        startActivity(intent);
     }
 }
