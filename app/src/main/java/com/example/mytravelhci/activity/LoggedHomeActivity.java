@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.mytravelhci.R;
 import com.example.mytravelhci.SideMenuClass;
@@ -106,5 +108,12 @@ public class LoggedHomeActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, newFragment);
         fragmentTransaction.commit();
+    }
+
+    public void passwordChanged(View view) {
+        Snackbar mySnackbar = Snackbar.make(findViewById(R.id.coordinator_logged),
+                "Password changed!", Snackbar.LENGTH_SHORT);
+        mySnackbar.getView().setBackgroundResource(R.color.customGreen);
+        mySnackbar.show();
     }
 }

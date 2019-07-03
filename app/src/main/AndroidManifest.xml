@@ -27,9 +27,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.ProfilePage"
-            android:exported="true" />
-        <activity
             android:name=".activity.AddTrip"
             android:exported="true" />
         <activity

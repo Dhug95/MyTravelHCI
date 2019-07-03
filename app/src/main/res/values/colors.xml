@@ -15,5 +15,6 @@
     <color name="hintGray">#888888</color>
     <color name="statusColor">#0071CD</color>
     <color name="blueArch">#1793D1</color>
+    <color name="blueTopBar">#0B7ACF</color>
 
 </resources>
