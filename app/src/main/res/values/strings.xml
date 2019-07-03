@@ -12,6 +12,7 @@
     <string name="email_signup">Sign up by email</string>
     <string name="facebook_signup">Connect by facebook</string>
     <string name="google_signup">Connect by Google</string>
+    <string name="account_created">Account created!</string>
     <string name="app_main_logo">App main logo</string>
     <string name="tickets_description">Manage all your tickets</string>
     <string name="money_description">Share your money with friends</string>

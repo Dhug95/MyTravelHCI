@@ -116,7 +116,7 @@
         android:layout_margin="@dimen/android_default_padding"
         android:layout_marginTop="8dp"
         android:onClick="startHome"
-        android:text="SignUp"
+        android:text="Create account"
         android:textColor="@color/customGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

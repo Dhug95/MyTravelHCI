@@ -1,6 +1,7 @@
 package com.example.mytravelhci;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
@@ -18,17 +19,13 @@ public class SideMenuClass {
         // Create the AccountHeader
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(activity)
+                .withTextColor(Color.parseColor("#FFFFFF"))
                 .withHeaderBackground(R.drawable.bg_gradient_nocorn)
                 .addProfiles(
                         new ProfileDrawerItem().withName("Keanu Reeves").withEmail("keanu.reeves@gmail.com")
                                 .withIcon(activity.getResources().getDrawable(R.drawable.keanu))
                 )
-                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
-                    @Override
-                    public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
-                        return false;
-                    }
-                })
+                .withSelectionListEnabledForSingleProfile(false)
                 .build();
 
         Drawable home_icn = activity.getDrawable(R.drawable.ic_home_side_24dp);

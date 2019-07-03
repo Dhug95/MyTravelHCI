@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mytravelhci.R;
@@ -29,7 +30,7 @@ public class SignupPage extends AppCompatActivity {
         setContentView(R.layout.activity_signup_page);
 
         MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.currencySpinner);
-        spinner.setItems("Select Currency","EUR", "YEN", "US", "UK");
+        spinner.setItems("Select Currency", "EUR", "YEN", "US", "UK");
         spinner.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -53,9 +54,8 @@ public class SignupPage extends AppCompatActivity {
     }
 
     public void startHome(View view) {
-        Toast t = Toast.makeText(getApplicationContext(), "Account created!", Toast.LENGTH_LONG);
-        t.show();
-        Intent intent = new Intent(this, NotLoggedHomeActivity.class);
+        Intent intent = new Intent(this, LoggedHomeActivity.class);
+        intent.putExtra("registered", true);
         startActivity(intent);
     }
 }
