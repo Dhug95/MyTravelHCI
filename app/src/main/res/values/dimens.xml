@@ -3,4 +3,5 @@
     <dimen name="android_vertical_padding">16dp</dimen>
     <dimen name="android_horizontal_padding">16dp</dimen>
     <dimen name="android_default_padding">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>
