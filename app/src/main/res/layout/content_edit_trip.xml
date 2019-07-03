@@ -6,29 +6,33 @@
     android:layout_height="match_parent"
     android:padding="@dimen/android_default_padding"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activity.AddTrip"
-    tools:showIn="@layout/activity_add_trip">
+    tools:context=".activity.EditTrip"
+    tools:showIn="@layout/activity_edit_trip">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="123dp"
         android:layout_height="107dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/trip_image"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/trip_image" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/uploadImage"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_margin="@dimen/android_default_padding"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="Upload image"
         android:textColor="@color/blueTopBar"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView"
         app:strokeColor="@color/blueTopBar"
         app:strokeWidth="2dp" />
@@ -75,8 +79,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:backgroundTint="@color/blueTopBar"
-        app:backgroundTint="@android:color/background_dark"
+        app:backgroundTint="@color/blueTopBar"
         app:icon="@drawable/date_black_24dp"
         app:layout_constraintBottom_toBottomOf="@+id/departing"
         app:layout_constraintStart_toEndOf="@+id/departing"
@@ -86,13 +89,13 @@
         android:id="@+id/arrival"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Return"
         android:inputType="date"
-        app:layout_constraintBottom_toBottomOf="@+id/returnButton"
         app:layout_constraintEnd_toStartOf="@+id/returnButton"
-        app:layout_constraintTop_toTopOf="@+id/returnButton" />
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/returnButton"
@@ -100,19 +103,19 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="@color/blueTopBar"
-        app:backgroundTint="@android:color/background_dark"
+        app:backgroundTint="@color/blueTopBar"
         app:icon="@drawable/date_black_24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/departingButton"
+        app:layout_constraintBottom_toBottomOf="@+id/arrival"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/departingButton" />
+        app:layout_constraintTop_toTopOf="@+id/arrival"
+        app:layout_constraintVertical_bias="0.6" />
 
     <View
         android:id="@+id/graybar"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,7 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Add participants"
+        android:text="Participants"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -147,23 +150,20 @@
         android:layout_width="274dp"
         android:layout_height="61dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="140dp"
         android:hint="Username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/participantsLabel">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
@@ -188,11 +188,65 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Add"
+        android:backgroundTint="@color/blueTopBar"
+        android:text="Edit"
         android:textColor="@android:color/white"
-        app:backgroundTint="@color/blueTopBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addParticipantEditText"
         app:strokeWidth="2dp" />
+
+    <ImageView
+        android:id="@+id/participant1Image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/participantsLabel"
+        android:src="@drawable/profile" />
+
+    <TextView
+        android:id="@+id/participant1Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Creator"
+        app:layout_constraintBottom_toBottomOf="@+id/participant1Image"
+        app:layout_constraintStart_toEndOf="@+id/participant1Image"
+        app:layout_constraintTop_toTopOf="@+id/participant1Image" />
+
+    <ImageView
+        android:id="@+id/participant2Image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/participant1Image"
+        android:src="@drawable/profile" />
+
+    <TextView
+        android:id="@+id/participant2Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Bruno"
+        app:layout_constraintBottom_toBottomOf="@+id/participant2Image"
+        app:layout_constraintStart_toEndOf="@+id/participant2Image"
+        app:layout_constraintTop_toTopOf="@+id/participant2Image" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/removeParticipantButton"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        app:backgroundTint="@color/customRed"
+        app:icon="@drawable/ic_cross_red_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/participant2Image"
+        app:layout_constraintStart_toEndOf="@+id/participant2Label"
+        app:layout_constraintTop_toTopOf="@+id/participant2Image" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
