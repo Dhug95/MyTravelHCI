@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.mytravelhci.R;
+import com.example.mytravelhci.SideMenuClass;
 import com.example.mytravelhci.fragment.HomeFragment;
 import com.example.mytravelhci.fragment.ProfileFragment;
 import com.example.mytravelhci.fragment.TripsFragment;
@@ -24,6 +27,8 @@ public class LoggedHomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logged_home);
+
+        new SideMenuClass(this);
 
         homeFragment = new HomeFragment();
         tripsFragment = new TripsFragment();
@@ -61,4 +66,7 @@ public class LoggedHomeActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.container, newFragment);
         fragmentTransaction.commit();
     }
+
+
+
 }
