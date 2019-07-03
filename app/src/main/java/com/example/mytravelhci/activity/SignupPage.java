@@ -27,7 +27,6 @@ public class SignupPage extends AppCompatActivity {
 
         MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.currencySpinner);
         spinner.setHint("Select Currency");
-
         spinner.setItems("EUR", "YEN", "US", "UK");
         spinner.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
