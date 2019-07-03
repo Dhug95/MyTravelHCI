@@ -9,13 +9,20 @@
     </style>
 
     <!-- Base custom theme. -->
-    <style name="Theme.Shrine" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Shrine" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/statusColor</item>
         <item name="colorPrimaryDark">@color/statusColor</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>
+    </style>
 
-        <!-- No action bar theme. -->
+    <style name="MyTheme.ActionBarStyle" parent="MaterialTheme.Light.ActionBar">
+        <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
+    </style>
+
+    <style name="MyTheme.ActionBar.TitleTextStyle" parent="MaterialTheme.Light.ActionBar">
+        <item name="android:textColor">@color/md_white_1000</item>
     </style>
 
     <style name="Theme.Shrine.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">

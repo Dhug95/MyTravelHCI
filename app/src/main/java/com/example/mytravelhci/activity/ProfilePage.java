@@ -22,33 +22,6 @@ public class ProfilePage extends AppCompatActivity {
         MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.currencySpinner);
         spinner.setItems("EUR", "YEN", "US", "UK", "EQRJH VBOWRINL");
 
-        BottomNavigationView bnv = (BottomNavigationView) findViewById(R.id.bottomBar);
-        bnv.getMenu().getItem(2).setChecked(true);
-
-        bnv.getMenu().getItem(0).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                Intent intent = new Intent(getApplicationContext(), NotLoggedHomeActivity.class);
-                startActivity(intent);
-                return true;
-            }
-        });
-
-        bnv.getMenu().getItem(1).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                Toast t = Toast.makeText(getApplicationContext(), "a puttan e mammt!", Toast.LENGTH_LONG);
-                t.show();
-                return true;
-            }
-        });
-
-        bnv.getMenu().getItem(2).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                return false;
-            }
-        });
     }
 
     public void startHome(View view) {
