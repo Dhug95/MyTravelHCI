@@ -195,8 +195,10 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:backgroundTint="@color/fabColor"
-        android:src="@drawable/ic_add_white_24dp"
+        android:elevation="25dp"
         android:onClick="gotoAddTrip"
+        android:src="@drawable/ic_add_white_24dp"
+        app:borderWidth="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
