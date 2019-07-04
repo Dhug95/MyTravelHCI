@@ -64,7 +64,7 @@ public class LoggedHomeActivity extends AppCompatActivity {
         tripsFragment = new TripsFragment();
         profileFragment = new ProfileFragment();
 
-        Boolean trip_added = intent.getBooleanExtra("Trip added!", true);
+        Boolean trip_added = intent.getBooleanExtra("Trip added!", false);
         if(trip_added){
             setFragment(tripsFragment);
             Snackbar mySnackbar = Snackbar.make(findViewById(R.id.coordinator_logged),
