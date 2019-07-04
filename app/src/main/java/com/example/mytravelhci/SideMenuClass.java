@@ -100,7 +100,7 @@ public class SideMenuClass {
                                 activity.startActivity(intent);
                             }
                         }
-                        return true;
+                        return false;
                     }
                 })
                 .build();
