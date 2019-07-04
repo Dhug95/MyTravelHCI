@@ -3,6 +3,7 @@ package com.example.mytravelhci.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +19,8 @@ public class AddTrip extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_trip);
 
-        MaterialButton departingButton = (MaterialButton) findViewById(R.id.departingButton);
-        MaterialButton returnButton = (MaterialButton) findViewById(R.id.returnButton);
+        MaterialButton departingButton = findViewById(R.id.departingButton);
+        MaterialButton returnButton = findViewById(R.id.returnButton);
 
         departingButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,16 +53,22 @@ public class AddTrip extends AppCompatActivity {
 
         switch(Integer.parseInt(id)){
             case R.id.departingButton:{
-                EditText departing = (EditText) findViewById(R.id.departing);
+                EditText departing = findViewById(R.id.departing);
                 departing.setText(dateMessage);
                 break;
             }
             case R.id.returnButton:{
-                EditText arrival = (EditText) findViewById(R.id.arrival);
+                EditText arrival = findViewById(R.id.arrival);
                 arrival.setText(dateMessage);
                 break;
             }
 
         }
+    }
+
+    public void gotoLoggedHome(View view) {
+        Intent intent = new Intent(this, LoggedHomeActivity.class);
+        intent.putExtra("Trip added!", true);
+        startActivity(intent);
     }
 }

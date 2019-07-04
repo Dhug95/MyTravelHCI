@@ -64,7 +64,17 @@ public class LoggedHomeActivity extends AppCompatActivity {
         tripsFragment = new TripsFragment();
         profileFragment = new ProfileFragment();
 
-        setFragment(homeFragment);
+        Boolean trip_added = intent.getBooleanExtra("Trip added!", true);
+        if(trip_added){
+            setFragment(tripsFragment);
+            Snackbar mySnackbar = Snackbar.make(findViewById(R.id.coordinator_logged),
+                    "Trip created!", Snackbar.LENGTH_SHORT);
+            mySnackbar.getView().setBackgroundResource(R.color.customGreen);
+            mySnackbar.show();
+        }
+        else {
+            setFragment(homeFragment);
+        }
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -114,5 +124,10 @@ public class LoggedHomeActivity extends AppCompatActivity {
                 "Password changed!", Snackbar.LENGTH_SHORT);
         mySnackbar.getView().setBackgroundResource(R.color.customGreen);
         mySnackbar.show();
+    }
+
+    public void gotoAddTrip(View view) {
+        Intent intent = new Intent(this, AddTrip.class);
+        startActivity(intent);
     }
 }
