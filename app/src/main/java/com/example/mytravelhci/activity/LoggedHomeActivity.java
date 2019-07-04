@@ -44,6 +44,7 @@ public class LoggedHomeActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -65,14 +66,13 @@ public class LoggedHomeActivity extends AppCompatActivity {
         profileFragment = new ProfileFragment();
 
         Boolean trip_added = intent.getBooleanExtra("Trip added!", false);
-        if(trip_added){
+        if (trip_added) {
             setFragment(tripsFragment);
             Snackbar mySnackbar = Snackbar.make(findViewById(R.id.coordinator_logged),
                     "Trip created!", Snackbar.LENGTH_SHORT);
             mySnackbar.getView().setBackgroundResource(R.color.customGreen);
             mySnackbar.show();
-        }
-        else {
+        } else {
             setFragment(homeFragment);
         }
 
