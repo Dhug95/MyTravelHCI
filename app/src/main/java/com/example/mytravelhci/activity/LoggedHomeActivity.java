@@ -1,6 +1,7 @@
 package com.example.mytravelhci.activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.mytravelhci.R;
@@ -22,6 +24,9 @@ import com.example.mytravelhci.fragment.ProfileFragment;
 import com.example.mytravelhci.fragment.TripsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 
 public class LoggedHomeActivity extends AppCompatActivity {
 
@@ -29,23 +34,21 @@ public class LoggedHomeActivity extends AppCompatActivity {
     private TripsFragment tripsFragment;
     private ProfileFragment profileFragment;
 
-    private SideMenuClass sideMenu;
+    private Drawer drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logged_home);
 
-        sideMenu = new SideMenuClass(this);
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_email_white_24dp);
-            getSupportActionBar().setTitle("");
-        }
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+        drawer = new SideMenuClass(this).drawer;
 
         Intent intent = getIntent();
         Boolean registered = intent.getBooleanExtra("registered", false);
@@ -68,9 +71,15 @@ public class LoggedHomeActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.appbar_menu, menu);
-        return true;
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case 16908332: {
+                drawer.openDrawer();
+            }
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -93,16 +102,6 @@ public class LoggedHomeActivity extends AppCompatActivity {
             return false;
         }
     };
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_menu: {
-                
-            }
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     private void setFragment(Fragment newFragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

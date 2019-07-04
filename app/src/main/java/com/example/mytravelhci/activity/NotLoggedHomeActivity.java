@@ -30,8 +30,6 @@ public class NotLoggedHomeActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_not_logged_home);
 
-        new SideMenuClass(this);
-
         Window window = this.getWindow();
 
         // clear FLAG_TRANSLUCENT_STATUS flag:
