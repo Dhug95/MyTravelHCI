@@ -37,6 +37,8 @@ public class SideMenuClass {
                 .withSelectionListEnabledForSingleProfile(false)
                 .build();
 
+        // Questa riga non serve a un cazzo
+
         Drawable home_icn = activity.getDrawable(R.drawable.ic_home_side_24dp);
         SecondaryDrawerItem home = new SecondaryDrawerItem().withIdentifier(1).withName("Home")
                 .withIcon(home_icn).withSelectable(false);
