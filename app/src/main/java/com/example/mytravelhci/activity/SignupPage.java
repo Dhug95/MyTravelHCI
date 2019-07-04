@@ -30,7 +30,7 @@ public class SignupPage extends AppCompatActivity {
         setContentView(R.layout.activity_signup_page);
 
         MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.currencySpinner);
-        spinner.setItems("Select Currency", "EUR", "YEN", "US", "UK");
+        spinner.setItems("Select", "EUR", "YEN", "USD", "GBP");
         spinner.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
         Toolbar toolbar = findViewById(R.id.toolbar);

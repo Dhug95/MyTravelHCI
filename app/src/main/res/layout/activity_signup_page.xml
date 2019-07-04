@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:background="@color/statusColor"
             app:popupTheme="@style/MyTheme.ActionBarStyle"
-            app:title="@string/app_name"
+            app:title="Sign Up"
             app:titleTextColor="@color/md_white_1000" />
 
     </com.google.android.material.appbar.AppBarLayout>
