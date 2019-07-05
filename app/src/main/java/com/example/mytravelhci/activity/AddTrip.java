@@ -67,11 +67,13 @@ public class AddTrip extends AppCompatActivity {
                 + day_string + "/" + year_string);
 
         switch (Integer.parseInt(id)) {
+            case R.id.departing:
             case R.id.departingButton: {
                 EditText departing = findViewById(R.id.departing);
                 departing.setText(dateMessage);
                 break;
             }
+            case R.id.arrival:
             case R.id.returnButton: {
                 EditText arrival = findViewById(R.id.arrival);
                 arrival.setText(dateMessage);
