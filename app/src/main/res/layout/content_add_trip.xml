@@ -135,7 +135,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="16dp"
-            android:background="@android:color/darker_gray"
+            android:background="@color/statusColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/departing" />
@@ -144,8 +144,8 @@
             android:id="@+id/participantsLabel"
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:drawableStart="@drawable/ic_add_users"
             android:drawablePadding="8dp"
             android:gravity="center"
@@ -158,11 +158,12 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/addParticipantEditText"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="274dp"
-            android:layout_height="61dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:hint="Username"
+            app:layout_constraintEnd_toStartOf="@+id/addUserButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/participantsLabel">
 
@@ -175,31 +176,85 @@
             android:id="@+id/addUserButton"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="8dp"
+            android:layout_height="wrap_content"
             android:text="+"
-            android:textColor="@color/blueTopBar"
+            android:textColor="@color/customGreen"
             app:layout_constraintBottom_toBottomOf="@+id/addParticipantEditText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/addParticipantEditText"
-            app:strokeColor="@color/blueTopBar"
-            app:strokeWidth="2dp" />
+            app:strokeColor="@color/customGreen" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/editTripButton"
-            style="@style/Widget.Shrine.FacebookButton"
+        <View
+            android:id="@+id/divider2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:onClick="gotoLoggedHome"
-            android:text="Add"
-            android:textColor="@android:color/white"
-            app:backgroundTint="@color/blueTopBar"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/statusColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addParticipantEditText"
+            app:layout_constraintTop_toBottomOf="@+id/addParticipantEditText" />
+
+        <TextView
+            android:id="@+id/destinationsLabel"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_destinations_add"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:text="Add destinations"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addDesinationsEditText"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="Destination"
+            app:layout_constraintEnd_toStartOf="@+id/addDestButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/destinationsLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addDestButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="@color/customGreen"
+            app:layout_constraintBottom_toBottomOf="@+id/addDesinationsEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/addDesinationsEditText"
+            app:strokeColor="@color/customGreen" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createTripBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/android_default_padding"
+            android:layout_marginTop="8dp"
+            android:onClick="goToTrip"
+            android:text="Create trip"
+            android:textColor="@color/statusColor"
+            app:cornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addDesinationsEditText"
+            app:strokeColor="@color/statusColor"
             app:strokeWidth="2dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
