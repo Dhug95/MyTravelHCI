@@ -87,4 +87,8 @@ public class AddTrip extends AppCompatActivity {
         intent.putExtra("Trip added!", true);
         startActivity(intent);
     }
+
+    public void goToTrip(View view) {
+
+    }
 }
