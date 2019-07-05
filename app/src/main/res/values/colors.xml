@@ -3,6 +3,7 @@
     <color name="customGreen">#01AA71</color>
     <color name="customGreenDark">#008858</color>
     <color name="customRed">#d50000</color>
+    <color name="googleRed">@android:color/holo_red_dark</color>
     <color name="customRedDark">#9b0000</color>
     <color name="mainRed">#C20000</color>
     <color name="mainBlue">#1A2E45</color>
@@ -15,7 +16,7 @@
     <color name="hintGray">#888888</color>
     <color name="statusColor">#0071CD</color>
     <color name="blueArch">#1793D1</color>
-    <color name="blueTopBar">#0B7ACF</color>
+    <color name="blueTopBar">#0071CD</color>
     <color name="fabColor">#00CD5C</color>
 
 </resources>

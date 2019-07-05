@@ -5,11 +5,14 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.mytravelhci.activity.Currency;
+import com.example.mytravelhci.activity.LoggedHomeActivity;
+import com.example.mytravelhci.activity.NotLoggedHomeActivity;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -95,11 +98,39 @@ public class SideMenuClass {
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                        Log.i("HAI PREMUTO DIO PORCO ", String.valueOf(position));
+                        Log.i("HAI PREMUTO NEL DRAWER: ", String.valueOf(position));
                         switch (position) {
+                            case 1: {
+                                Intent intent = new Intent(activity, LoggedHomeActivity.class);
+                                intent.putExtra("frag_to_set", "home");
+                                activity.startActivity(intent);
+                                break;
+                            }
                             case 4: {
                                 Intent intent = new Intent(activity, Currency.class);
                                 activity.startActivity(intent);
+                                break;
+                            }
+                            case 6: {
+                                Intent intent = new Intent(activity, LoggedHomeActivity.class);
+                                intent.putExtra("frag_to_set", "profile");
+                                activity.startActivity(intent);
+                                break;
+                            }
+                            case 7: {
+                                Intent intent = new Intent(activity, LoggedHomeActivity.class);
+                                intent.putExtra("frag_to_set", "trips");
+                                activity.startActivity(intent);
+                                break;
+                            }
+                            case 8: {
+                                Intent intent = new Intent(activity, NotLoggedHomeActivity.class);
+                                intent.putExtra("logged_out", true);
+                                activity.startActivity(intent);
+                                break;
+                            }
+                            default: {
+                                break;
                             }
                         }
                         return false;

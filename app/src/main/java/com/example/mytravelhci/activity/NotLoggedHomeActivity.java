@@ -13,6 +13,7 @@ import android.view.WindowManager;
 
 import com.example.mytravelhci.R;
 import com.example.mytravelhci.SideMenuClass;
+import com.google.android.material.snackbar.Snackbar;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.iconics.typeface.library.materialdesigniconic.MaterialDesignIconic;
 import com.mikepenz.materialdrawer.AccountHeader;
@@ -29,6 +30,15 @@ public class NotLoggedHomeActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_not_logged_home);
+
+        Intent intent = getIntent();
+        Boolean logged_out = intent.getBooleanExtra("logged_out", false);
+        if (logged_out) {
+            Snackbar mySnackbar = Snackbar.make(findViewById(R.id.not_logged_constraint),
+                    "Logged out successfully.", Snackbar.LENGTH_SHORT);
+            mySnackbar.getView().setBackgroundResource(R.color.customGreen);
+            mySnackbar.show();
+        }
 
         Window window = this.getWindow();
 

@@ -29,19 +29,19 @@
         android:layout_margin="@dimen/android_default_padding"
         android:onClick="startHome"
         android:text="@string/start_button"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/statusColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/worm_dots_indicator"
-        app:strokeColor="@color/colorAccent"
+        app:strokeColor="@color/statusColor"
         app:strokeWidth="2dp" />
 
     <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
         android:id="@+id/worm_dots_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:dotsColor="@color/customGreen"
+        app:dotsColor="@color/statusColor"
         app:dotsCornerRadius="8dp"
         app:dotsSize="16dp"
         app:dotsSpacing="4dp"

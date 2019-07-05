@@ -68,6 +68,7 @@ public class AddTrip extends AppCompatActivity {
 
     public void gotoLoggedHome(View view) {
         Intent intent = new Intent(this, LoggedHomeActivity.class);
+        intent.putExtra("frag_to_set", "trips");
         intent.putExtra("Trip added!", true);
         startActivity(intent);
     }

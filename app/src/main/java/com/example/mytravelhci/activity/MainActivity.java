@@ -47,7 +47,7 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
 
         Window window = this.getWindow();
-        window.setStatusBarColor(Color.parseColor("#008858"));
+        //window.setStatusBarColor(Color.parseColor("#0071CD"));
 
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager) findViewById(R.id.mPager);
