@@ -42,5 +42,4 @@
 
     <include layout="@layout/content_add_trip" />
 
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
