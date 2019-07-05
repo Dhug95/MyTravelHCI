@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.mytravelhci.R;
 import com.example.mytravelhci.SideMenuClass;
@@ -70,5 +71,11 @@ public class TripPageActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, newFragment);
         fragmentTransaction.commit();
+    }
+
+    public void showDatePicker(View view) {
+        Integer iddio = Integer.valueOf(view.getId());
+        DatePickerFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), iddio.toString());
     }
 }
