@@ -153,4 +153,10 @@ public class LoggedHomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddTrip.class);
         startActivity(intent);
     }
+
+    public void startHome(View view) {
+        Intent intent = new Intent(this, NotLoggedHomeActivity.class);
+        intent.putExtra("logged_out", true);
+        startActivity(intent);
+    }
 }

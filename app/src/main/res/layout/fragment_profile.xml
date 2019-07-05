@@ -4,79 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/android_default_padding"
     tools:context=".activity.LoggedHomeActivity">
 
     <ImageView
         android:id="@+id/profilePicture"
         android:layout_width="114dp"
         android:layout_height="104dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
         android:src="@drawable/keanu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/name"
-        android:layout_width="134dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="Name: Keanu Reeves"
-        app:layout_constraintStart_toEndOf="@+id/profilePicture"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
+        android:id="@+id/username_text"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_person_grey_24dp"
+        android:drawablePadding="12dp"
+        android:padding="8dp"
+        android:text="Keanu Reeves"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profilePicture"
+        app:layout_constraintTop_toTopOf="@id/profilePicture" />
+
+    <View
+        android:id="@+id/username_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_below="@id/username_text"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="Email: keanu.reeves@gmail.com"
-        app:layout_constraintStart_toEndOf="@+id/profilePicture"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        android:background="@color/statusColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profilePicture"
+        app:layout_constraintTop_toBottomOf="@id/username_text" />
 
     <TextView
-        android:id="@+id/currencyLabel"
-        android:layout_width="61dp"
-        android:layout_height="18dp"
+        android:id="@+id/email_text"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableEnd="@drawable/ic_email_gray_24dp"
+        android:drawablePadding="12dp"
+        android:padding="8dp"
+        android:text="keanu.reeves@gmail.com"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profilePicture"
+        app:layout_constraintTop_toBottomOf="@id/username_line" />
+
+    <View
+        android:id="@+id/email_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_below="@id/username_text"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="Currency:"
-        app:layout_constraintStart_toEndOf="@+id/profilePicture"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        android:background="@color/statusColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profilePicture"
+        app:layout_constraintTop_toBottomOf="@id/email_text" />
 
     <com.jaredrummler.materialspinner.MaterialSpinner
         android:id="@+id/currencySpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@id/currencyLabel"
+        app:layout_constraintTop_toBottomOf="@id/email_line" />
+
+    <TextView
+        android:id="@+id/currencyLabel"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/signupButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toEndOf="@+id/currencyLabel"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.278" />
+        android:text="Your currency:"
+        app:layout_constraintBottom_toBottomOf="@id/currencySpinner"
+        app:layout_constraintStart_toEndOf="@id/profilePicture"
+        app:layout_constraintTop_toTopOf="@id/currencySpinner" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/logoutButton"
         style="@style/Widget.Shrine.GoogleButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:layout_margin="@dimen/android_default_padding"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:onClick="startHome"
         android:text="LogOut"
         android:textColor="@android:color/white"
+        app:cornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilePicture"
+        app:layout_constraintTop_toBottomOf="@+id/currencySpinner"
         app:strokeColor="@color/customRed"
         app:strokeWidth="2dp" />
 
@@ -84,56 +106,50 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="4dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintTop_toBottomOf="@+id/logoutButton"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_marginTop="8dp"
+        android:background="@color/statusColor"
+        app:layout_constraintTop_toBottomOf="@+id/logoutButton" />
 
     <ImageView
         android:id="@+id/key"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoutButton"
+        app:layout_constraintTop_toBottomOf="@+id/view"
         app:srcCompat="@drawable/vintage_key" />
 
     <TextView
         android:id="@+id/passwordChangeLabel"
+        style="@style/TextAppearance.AppCompat.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
         android:text="Password change"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/key"
         app:layout_constraintStart_toEndOf="@+id/key"
-        app:layout_constraintTop_toBottomOf="@+id/logoutButton" />
+        app:layout_constraintTop_toTopOf="@id/key" />
+
 
     <TextView
         android:id="@+id/hintLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:text="Leave blank if you don't want to change"
         android:textColor="@color/hintGray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordChangeLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/key" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/currentPassword"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hintLabel">
@@ -151,9 +167,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currentPassword">
@@ -171,9 +185,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newPassword">
@@ -187,17 +199,13 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/changePassword"
-        style="@style/Widget.Shrine.FacebookButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/android_default_padding"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/statusColor"
         android:onClick="passwordChanged"
         android:text="Change password"
         android:textColor="@android:color/white"
+        app:cornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
