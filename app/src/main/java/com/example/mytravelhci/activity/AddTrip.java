@@ -1,9 +1,12 @@
 package com.example.mytravelhci.activity;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.view.View;
@@ -35,7 +38,19 @@ public class AddTrip extends AppCompatActivity {
             }
         });
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
+
+        Drawable upArrow = getResources().getDrawable(R.drawable.ic_arrow_back_white_24dp);
+
+        // Enable the Up button
+        ab.setHomeAsUpIndicator(upArrow);
+        ab.setDisplayHomeAsUpEnabled(true);
     }
 
     public void showDatePicker(View view) {
@@ -51,13 +66,13 @@ public class AddTrip extends AppCompatActivity {
         String dateMessage = (month_string + "/"
                 + day_string + "/" + year_string);
 
-        switch(Integer.parseInt(id)){
-            case R.id.departingButton:{
+        switch (Integer.parseInt(id)) {
+            case R.id.departingButton: {
                 EditText departing = findViewById(R.id.departing);
                 departing.setText(dateMessage);
                 break;
             }
-            case R.id.returnButton:{
+            case R.id.returnButton: {
                 EditText arrival = findViewById(R.id.arrival);
                 arrival.setText(dateMessage);
                 break;
