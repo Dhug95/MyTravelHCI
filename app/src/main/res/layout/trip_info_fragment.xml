@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/customGray">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/android_default_padding"
+        tools:context=".fragment.HomeFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="2dp"
+            android:layout_height="3dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.30" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="2dp"
+            android:layout_height="3dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.10" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/shortcuts_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="25dp"
+            android:paddingBottom="16dp"
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintBottom_toBottomOf="@id/guideline2"
+            app:layout_constraintTop_toTopOf="@id/guideline">
+
+            <include layout="@layout/shortcuts_card_content" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rome_card"
+            style="@style/CardView.Light"
+            android:layout_width="379dp"
+            android:layout_height="267dp"
+            android:layout_marginTop="16dp"
+            android:elevation="25dp"
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shortcuts_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:layout_gravity="top"
+                    android:contentDescription="@string/trip_description"
+                    android:src="@drawable/colosseo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:drawablePadding="8dp"
+                        android:gravity="center"
+                        android:lineSpacingMultiplier="1.2"
+                        android:text="Last Trip"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:drawableStart="@drawable/ic_black_penis"
+                        android:drawablePadding="8dp"
+                        android:gravity="center"
+                        android:lineSpacingMultiplier="1.2"
+                        android:text="Rome"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageButton
+            android:id="@+id/add_trip_btn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="gotoAddTrip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/plus_figo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rome_card" />
+
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Add new trip"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@id/add_trip_btn"
+            app:layout_constraintStart_toStartOf="@id/add_trip_btn"
+            app:layout_constraintTop_toBottomOf="@id/add_trip_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

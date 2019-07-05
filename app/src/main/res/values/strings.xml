@@ -18,6 +18,8 @@
     <string name="money_description">Share your money with friends</string>
     <string name="trip_description">The world of our trips</string>
     <string name="email">Email</string>
+    <string name="info">Trip Info</string>
+    <string name="payment">Payments</string>
     <string name="password">Password</string>
     <string-array name="currency_array">
         <item>EUR</item>

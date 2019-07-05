@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shrine">
-        <activity android:name=".activity.Documentation"
+        <activity android:name=".activity.TripPageActivity"
             android:exported="true"></activity>
+        <activity
+            android:name=".activity.Documentation"
+            android:exported="true" />
         <activity android:name=".activity.LoggedHomeActivity" />
         <activity
             android:name=".activity.NotLoggedHomeActivity"
