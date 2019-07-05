@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.view.View;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.mytravelhci.activity.Currency;
+import com.example.mytravelhci.activity.Documentation;
 import com.example.mytravelhci.activity.LoggedHomeActivity;
 import com.example.mytravelhci.activity.NotLoggedHomeActivity;
 import com.mikepenz.materialdrawer.AccountHeader;
@@ -129,6 +131,22 @@ public class SideMenuClass {
                                 activity.startActivity(intent);
                                 break;
                             }
+
+                            case 10:{
+                                Intent intent = new Intent(activity, Documentation.class);
+                                activity.startActivity(intent);
+                                break;
+                            }
+
+                            case 11: {
+                                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                                        "mailto","admin@gmail.com", null));
+                                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "MyTravel Help");
+                                emailIntent.putExtra(Intent.EXTRA_EMAIL, "");
+                                activity.startActivity(Intent.createChooser(emailIntent, "Send email..."));
+
+                            }
+
                             default: {
                                 break;
                             }
