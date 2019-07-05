@@ -119,6 +119,7 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:focusable="true"
+            android:onClick="gotoAddTrip"
             android:scaleType="fitCenter"
             android:src="@drawable/plus_figo"
             app:layout_constraintEnd_toEndOf="parent"
