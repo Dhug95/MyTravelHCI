@@ -25,6 +25,7 @@ public class TripPageActivity extends AppCompatActivity {
     private TripPaymentFragment paymentFragment;
 
     private Drawer drawer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +35,7 @@ public class TripPageActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
@@ -77,5 +78,13 @@ public class TripPageActivity extends AppCompatActivity {
         Integer iddio = Integer.valueOf(view.getId());
         DatePickerFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), iddio.toString());
+    }
+
+    public void goBack(View view) {
+        this.onBackPressed();
+    }
+
+    public void openDrawer(View view) {
+        drawer.openDrawer();
     }
 }

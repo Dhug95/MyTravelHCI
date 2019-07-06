@@ -66,6 +66,9 @@ public class LoggedHomeActivity extends AppCompatActivity {
         tripsFragment = new TripsFragment();
         profileFragment = new ProfileFragment();
 
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
         // Choose which fragment to set
         frag_to_set = intent.getStringExtra("frag_to_set");
         if (frag_to_set == null) {
@@ -75,18 +78,22 @@ public class LoggedHomeActivity extends AppCompatActivity {
         switch (frag_to_set) {
             case "home": {
                 setFragment(homeFragment);
+                navigation.setSelectedItemId(R.id.home);
                 break;
             }
             case "trips": {
                 setFragment(tripsFragment);
+                navigation.setSelectedItemId(R.id.myTrips);
                 break;
             }
             case "profile": {
                 setFragment(profileFragment);
+                navigation.setSelectedItemId(R.id.myProfile);
                 break;
             }
             default: {
                 setFragment(homeFragment);
+                navigation.setSelectedItemId(R.id.home);
                 break;
             }
         }
@@ -99,8 +106,7 @@ public class LoggedHomeActivity extends AppCompatActivity {
             mySnackbar.show();
         }
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
     }
 
     @Override
@@ -157,6 +163,11 @@ public class LoggedHomeActivity extends AppCompatActivity {
     public void startHome(View view) {
         Intent intent = new Intent(this, NotLoggedHomeActivity.class);
         intent.putExtra("logged_out", true);
+        startActivity(intent);
+    }
+
+    public void goToTrip(View view) {
+        Intent intent = new Intent(this, TripPageActivity.class);
         startActivity(intent);
     }
 }

@@ -20,15 +20,26 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_weight="1"
-
             android:background="@color/statusColor"
             app:popupTheme="@style/MyTheme.ActionBarStyle"
             app:title="Edit trip"
-            app:titleTextColor="@color/md_white_1000" />
+            app:titleTextColor="@color/md_white_1000">
+
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/statusColor"
+                android:text="Edit trip"
+                android:textAlignment="center"
+                android:textColor="@color/md_white_1000"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_edit_trip" />
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

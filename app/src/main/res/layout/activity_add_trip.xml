@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:background="@color/statusColor"
             app:popupTheme="@style/MyTheme.ActionBarStyle"
-            app:title="Add a trip"
+            app:title="Add new trip"
             app:titleTextColor="@color/md_white_1000">
 
             <TextView
@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@color/statusColor"
-                android:text="Add a trip"
+                android:text="Add new trip"
                 android:textAlignment="center"
                 android:textColor="@color/md_white_1000"
                 android:textStyle="bold" />

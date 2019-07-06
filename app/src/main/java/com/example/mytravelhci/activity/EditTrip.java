@@ -1,7 +1,10 @@
 package com.example.mytravelhci.activity;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -32,13 +35,25 @@ public class EditTrip extends AppCompatActivity {
             }
         });
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
+
+        Drawable upArrow = getResources().getDrawable(R.drawable.ic_arrow_back_white_24dp);
+
+        // Enable the Up button
+        ab.setHomeAsUpIndicator(upArrow);
+        ab.setDisplayHomeAsUpEnabled(true);
     }
 
     public void showDatePicker(View view) {
-        Integer id = Integer.valueOf(view.getId());
+        Integer iddio = Integer.valueOf(view.getId());
         DatePickerFragment newFragment = new DatePickerFragment();
-        newFragment.show(getSupportFragmentManager(), id.toString());
+        newFragment.show(getSupportFragmentManager(), iddio.toString());
     }
 
     public void processDatePickerResult(int year, int month, int day, String id) {
@@ -48,14 +63,16 @@ public class EditTrip extends AppCompatActivity {
         String dateMessage = (month_string + "/"
                 + day_string + "/" + year_string);
 
-        switch(Integer.parseInt(id)){
-            case R.id.departingButton:{
-                EditText departing =  findViewById(R.id.departing);
+        switch (Integer.parseInt(id)) {
+            case R.id.departing:
+            case R.id.departingButton: {
+                EditText departing = findViewById(R.id.departing);
                 departing.setText(dateMessage);
                 break;
             }
-            case R.id.returnButton:{
-                EditText arrival =  findViewById(R.id.arrival);
+            case R.id.arrival:
+            case R.id.returnButton: {
+                EditText arrival = findViewById(R.id.arrival);
                 arrival.setText(dateMessage);
                 break;
             }

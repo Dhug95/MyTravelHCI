@@ -25,6 +25,31 @@
             app:popupTheme="@style/MyTheme.ActionBarStyle"
             app:titleTextColor="@color/md_white_1000">
 
+            <!--
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="goBack"
+                android:scaleType="fitStart"
+                android:src="@drawable/ic_arrow_back_white_24dp" />
+
+            <ImageButton
+                android:id="@+id/side_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:onClick="openDrawer"
+                android:focusable="true"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:src="@drawable/ic_menu_white_24dp" />
+                -->
+
             <TextView
                 style="@style/TextAppearance.MaterialComponents.Headline5"
                 android:layout_width="wrap_content"

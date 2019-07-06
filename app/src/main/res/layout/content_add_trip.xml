@@ -12,9 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/android_default_padding"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context=".activity.AddTrip"
-        tools:showIn="@layout/activity_add_trip">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/manarola_card"
@@ -56,7 +54,7 @@
                     android:drawablePadding="8dp"
                     android:gravity="center"
                     android:lineSpacingMultiplier="1.2"
-                    android:text="UPLOAD"
+                    android:text="Choose picture"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
             </LinearLayout>
 
