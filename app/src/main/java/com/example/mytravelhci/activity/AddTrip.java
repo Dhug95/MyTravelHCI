@@ -92,6 +92,7 @@ public class AddTrip extends AppCompatActivity {
 
     public void goToTrip(View view) {
         Intent intent = new Intent(this, TripPageActivity.class);
+        intent.putExtra("created_now", true);
         startActivity(intent);
     }
 }
