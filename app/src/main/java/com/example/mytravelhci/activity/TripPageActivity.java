@@ -43,9 +43,16 @@ public class TripPageActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Boolean created_now = intent.getBooleanExtra("created_now", false);
+        Boolean edited = intent.getBooleanExtra("edited", false);
         if (created_now) {
             Snackbar mySnackbar = Snackbar.make(findViewById(R.id.coordinator_logged),
                     "Trip created!", Snackbar.LENGTH_SHORT);
+            mySnackbar.getView().setBackgroundResource(R.color.customGreen);
+            mySnackbar.show();
+        }
+        if (edited) {
+            Snackbar mySnackbar = Snackbar.make(findViewById(R.id.coordinator_logged),
+                    "Trip updated.", Snackbar.LENGTH_SHORT);
             mySnackbar.getView().setBackgroundResource(R.color.customGreen);
             mySnackbar.show();
         }
@@ -118,6 +125,8 @@ public class TripPageActivity extends AppCompatActivity {
     }
 
     public void goToEdit(MenuItem item) {
+        Intent intent = new Intent(this, EditTrip.class);
+        startActivity(intent);
     }
 
     public void deleteTrip(MenuItem item) {

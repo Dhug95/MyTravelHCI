@@ -1,9 +1,13 @@
 package com.example.mytravelhci.activity;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +17,8 @@ import com.example.mytravelhci.R;
 import com.google.android.material.button.MaterialButton;
 
 public class EditTrip extends AppCompatActivity {
+
+    private Context thisContext = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,5 +84,21 @@ public class EditTrip extends AppCompatActivity {
             }
 
         }
+    }
+
+    public void goToTrip(View view) {
+        Intent intent = new Intent(this, TripPageActivity.class);
+        intent.putExtra("edited", true);
+        startActivity(intent);
+    }
+
+    public void deletePartcitipant(View view) {
+        AlertDialog ad = new AlertDialog.Builder(this)
+                .setTitle("Confirm removal")
+                .setMessage("Are you sure you want to remove this participant?")
+                .setPositiveButton("Cancel", null)
+                .setNegativeButton("Delete", null)
+                .show();
+        ad.getButton(ad.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.customRed));
     }
 }

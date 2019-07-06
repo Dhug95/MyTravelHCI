@@ -88,9 +88,9 @@
             android:ems="10"
             android:focusable="false"
             android:hint="Departure"
-            android:text="23/04/2019"
             android:inputType="date"
             android:onClick="showDatePicker"
+            android:text="23/04/2019"
             app:layout_constraintBottom_toBottomOf="@id/departingButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/departingButton" />
@@ -115,10 +115,10 @@
             android:clickable="true"
             android:ems="10"
             android:focusable="false"
-            android:text="28/04/2019"
             android:hint="Return"
             android:inputType="date"
             android:onClick="showDatePicker"
+            android:text="28/04/2019"
             app:layout_constraintBottom_toBottomOf="@+id/returnButton"
             app:layout_constraintEnd_toStartOf="@+id/returnButton"
             app:layout_constraintTop_toTopOf="@+id/returnButton" />
@@ -160,6 +160,64 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/graybar" />
 
+        <ImageView
+            android:id="@+id/you"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_part_64"
+            app:layout_constraintBottom_toTopOf="@id/part_element"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/participantsLabel" />
+
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="start"
+            android:text="You"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/you"
+            app:layout_constraintStart_toEndOf="@id/you"
+            app:layout_constraintTop_toTopOf="@id/you" />
+
+        <ImageView
+            android:id="@+id/part_element"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_part_64"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/addParticipantEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/you" />
+
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="start"
+            android:text="Mario Biondi"
+            app:layout_constraintBottom_toBottomOf="@id/part_element"
+            app:layout_constraintEnd_toStartOf="@+id/deleteUserBtn"
+            app:layout_constraintStart_toEndOf="@id/part_element"
+            app:layout_constraintTop_toTopOf="@id/part_element" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteUserBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:onClick="deletePartcitipant"
+            android:text="x"
+            android:textColor="@color/customRed"
+            app:layout_constraintBottom_toBottomOf="@+id/part_element"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/part_element"
+            app:strokeColor="@color/customRed" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/addParticipantEditText"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -170,7 +228,7 @@
             android:hint="Username"
             app:layout_constraintEnd_toStartOf="@+id/addUserButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/participantsLabel">
+            app:layout_constraintTop_toBottomOf="@+id/part_element">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -224,7 +282,7 @@
             android:hint="Destination"
             app:layout_constraintEnd_toStartOf="@+id/addDestButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/destinationsLabel">
+            app:layout_constraintTop_toBottomOf="@+id/dest_elem">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -243,6 +301,40 @@
             app:layout_constraintTop_toTopOf="@+id/addDesinationsEditText"
             app:strokeColor="@color/customGreen" />
 
+        <ImageView
+            android:id="@+id/dest_elem"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_destination_64"
+            app:layout_constraintBottom_toTopOf="@id/addDesinationsEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/destinationsLabel" />
+
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="start"
+            android:text="Rome"
+            app:layout_constraintBottom_toBottomOf="@id/dest_elem"
+            app:layout_constraintEnd_toStartOf="@+id/deleteDestBtn"
+            app:layout_constraintStart_toEndOf="@id/dest_elem"
+            app:layout_constraintTop_toTopOf="@id/dest_elem" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteDestBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="x"
+            android:textColor="@color/customRed"
+            app:layout_constraintBottom_toBottomOf="@+id/dest_elem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dest_elem"
+            app:strokeColor="@color/customRed" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/createTripBtn"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -251,7 +343,7 @@
             android:layout_margin="@dimen/android_default_padding"
             android:layout_marginTop="8dp"
             android:onClick="goToTrip"
-            android:text="Create trip"
+            android:text="Apply changes"
             android:textColor="@color/statusColor"
             app:cornerRadius="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
