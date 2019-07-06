@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".activity.Documentation">
 
-    <com.mukesh.MarkdownView
-        android:id="@+id/markdown_view"
+    <WebView
+        android:id="@+id/webView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>documentation</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 30px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 2px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding-top: 8px; padding-bottom: 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { overflow-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
+#md-notification .btn { border: 0px; }
+.dropdown-menu .divider { border-color: rgb(229, 229, 229); }
+
+
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-node'><h1><a name="overview" class="md-header-anchor"></a><span>Overview</span></h1><p><span>The main idea of </span><strong><span>myTravel</span></strong><span>  is to provide to travelers an intuitive and easy-to-use application to let  them  to keep track of all the payments done  during a trip, in order to always be up to date with their  budget. In particular, it can be used  alone or in group, and in this  latter  case myTravel  offers the possibility  to split some payments among the participants so that  anyone can get  rid of keeping bills with each  other.</span></p><p><em><span>myTravel</span></em><span> will be useful for:</span></p><ul><li><strong><span>Alone Holiday Traveler</span></strong><span>, which accounts all his/her spendings into the app in order to have an idea of his/her balance</span></li><li><strong><span>Group Holiday Travelers</span></strong><span>, which want to split some payments among the participants</span></li><li><strong><span>Business Travelers</span></strong><span>, which want to distinguish between personal spendings and business ones which have to be refund by the company</span></li></ul><h1><a name="get-started" class="md-header-anchor"></a><span>Get started</span></h1><p><span>The main page of the application is composed by 3 tabs, which can be navigated by means of the </span><strong><span>lower Navigation Bar</span></strong><span>:</span></p><ul><li><strong><span>Home</span></strong><span>: where you find the most important shortcuts for searching tickets and accomodations, for the currency conversion tool and finally for the last trip you have added;</span></li></ul><p><img src='home_logged.png' alt='picture' referrerPolicy='no-referrer' /></p><ul><li><strong><span>My trips</span></strong><span>: where you find all the trips you have added to the application so far;</span></li></ul><p><img src='my_trips.png' alt='picture' referrerPolicy='no-referrer' /></p><ul><li><strong><span>Profile</span></strong><span>: where you can find your information such as your </span><strong><span>username</span></strong><span>, your </span><strong><span>email</span></strong><span>, your </span><strong><span>profile picture</span></strong><span> etc...</span></li></ul><p><img src='my_profile.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>Moreover, an hidden side menu is always present, which other than the shortcut just mentioned, it also contains a quick </span><strong><span>logout</span></strong><span> button, an </span><strong><span>help</span></strong><span> button which brings you to this documentation and a </span><strong><span>contact us</span></strong><span> button which allows you to directly contact the developers via email.</span></p><p><img src='sidemenu.png' alt='picture' referrerPolicy='no-referrer' /></p><h1><a name="your-profile" class="md-header-anchor"></a><span>Your profile</span></h1><p><span>The profile page of the app, which is reacheable by the right-most tab of the main page, shows the informations about you that are relevant for the app.</span>
+<span>You will find the email and the username that identify you (which cannot be changed), your profile picture, your preferred currency and a form where you can change your current password (if you registered via email).</span></p><ul><li><span>In order to change the currency, it is sufficient to tap on the Dropdown menu and choose the currency.</span></li><li><span>In order to change the profile picture, it is sufficient to tap on the profile picture and the choose a new one from the gallery.</span></li></ul><p><strong><span>Note:</span></strong><span> the password exists (and thus can be changed) only if the user signed up via email. In order to change the password, you firstly have to type the current (old) one in the proper field, and then the new one. Finally you have to re-type the new one and press the </span><em><span>change button</span></em><span> button.</span></p><h1><a name="add-a-trip" class="md-header-anchor"></a><span>Add a trip</span></h1><p><strong><span>Note</span></strong><span>: </span><em><span>all the informations you will insert about a trip can be changed at any time.</span></em></p><p><span>Adding a trip is quite simple. Either you click on the </span><em><span>Add a trip</span></em><span> button in the homepage or you click the </span><em><span>floating button</span></em><span> in </span><em><span>My trips</span></em><span> page. You will be presented with the following page:</span></p><p><img src='add_trip.jpg' alt='picture' referrerPolicy='no-referrer' /></p><p><span>Then, with the </span><em><span>Choose picture</span></em><span> button you can choose a picture for the trip, then you can insert the name of the trip in the </span><em><span>Trip name</span></em><span> text field, and departure and return dates by simple clicking to the calendar button and choosing the date from the google calendar that blows up. Then you can start choosing the participants of the trip, by just searching them in the </span><em><span>Add participants</span></em><span> section, typing their </span><strong><span>Usernames</span></strong><span>. Finally, you can optionally add the destinations your trip will be composed of and a simple text note useful for remember something. Once you have done, tap on </span><em><span>CREATE TRIP</span></em><span> button.</span></p><h1><a name="edit-a-trip" class="md-header-anchor"></a><span>Edit a trip</span></h1><p><span>As already said in the </span><strong><span>Add a Trip</span></strong><span> section, you can always edit trip informations. Go to </span><em><span>My trips</span></em><span> tab of the homepage, and then tap on the trip you want to modify. You will get a page like the following:</span></p><p><img src='trip_page.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>Tap on the </span><em><span>3 dots</span></em><span> on the top-right corner and select </span><em><span>Edit</span></em><span>.</span></p><p><img src='edit_trip.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>Now you are on a page very similar to the one when you add a trip:</span></p><p><img src='edit_trip_page.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>Once you get to the Edit trip page, you can edit each field in the same way you compiled it when you added the trip.</span></p><p><span>Once you have done, tap the </span><em><span>check</span></em><span> on the top-right and you are done:</span></p><p><img src='edit_trip_page_check.png' alt='picture' referrerPolicy='no-referrer' /></p><h1><a name="delete-a-trip" class="md-header-anchor"></a><span>Delete a trip</span></h1><p><span>In order to delete a trip, go to </span><em><span>My trips</span></em><span> tab of the homepage and tap to the target trip.</span></p><p><span>Once you are in the </span><em><span>Trip Page</span></em><span>, tap on the </span><em><span>3 dots</span></em><span> on the top-right and then tap </span><strong><span>Delete</span></strong><span>.</span></p><p><img src='delete_trip.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>A pop-up will appear, asking you a confirmation for deleting the trip, tap on the </span><strong><span>red delete button</span></strong><span> and you are done:</span></p><p><img src='delete_trip_popup.png' alt='picture' referrerPolicy='no-referrer' /></p><h1><a name="trip-payments-overview" class="md-header-anchor"></a><span>Trip payments overview</span></h1><p><span>When on a </span><em><span>Trip Page</span></em><span>, you can see there are two tabs in the bottom navigation bar,  and they are </span><strong><span>Trip info</span></strong><span> and </span><strong><span>Payments</span></strong><span>. If you tap on </span><strong><span>Payments</span></strong><span>:</span></p><p><img src='goto_payments.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>you will reach the payments tab:</span></p><p><img src='payments_overview.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>The </span><strong><span>Payments</span></strong><span> tab is composed by two sections: </span><strong><span>Overview</span></strong><span> and </span><strong><span>History</span></strong><span>.</span></p><p><span>You are now in the Overview section, where you can find a diagram showing how much you spent for that trip so far. Then you find the list of participants of the trip, and for each of them, if you owe to him a certain amout, a corresponding </span><strong><span>red amount</span></strong><span> is displayed below him, while if he owe to you a certain amount, a corresponding </span><strong><span>green amount</span></strong><span> is displayed below him.</span></p><h1><a name="trip-payments-history" class="md-header-anchor"></a><span>Trip payments history</span></h1><p><span>Once you tap the </span><strong><span>Payments</span></strong><span> tab of the bottom navigation bar of a trip page, you will get to the </span><em><span>payments overview</span></em><span> section. On the top there is a navigation bar allowing you to change section and so to view the </span><strong><span>History</span></strong><span> section:</span></p><p><img src='goto_payments_history.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>You will get to a page listing all the payments you have done for that trip:</span></p><p><img src='payments_history.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>Each payment in the list is displayed in terms of an icon, a name and an amout. If the icon represents a </span><strong><span>single guy</span></strong><span> it means that that payment was a personal payment (the other participants will never be able to see it in their app), if the icon represents a </span><strong><span>group</span></strong><span> it means that that payment is associated to a group payment and the amount is only your contribution.</span></p><h1><a name="add-a-payment" class="md-header-anchor"></a><span>Add a payment</span></h1><p><span>In order to add a payment, go to the </span><strong><span>Payments</span></strong><span> tab of a Trip Page and go to the </span><strong><span>Overview</span></strong><span> section. You will see a floating button on the bottom-left of the page. Tap on it and select </span><em><span>Add new payment</span></em><span>:</span></p><p><img src='add_payment_1.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>Then, insert the </span><em><span>description</span></em><span> (e.g. domò sushi), the </span><em><span>amout</span></em><span>, the </span><em><span>currency</span></em><span>, and the </span><em><span>date</span></em><span>, then tap the </span><em><span>continue</span></em><span> button:</span></p><p><img src='add_payment_2.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>Finally, you will get to a page where it is displayed the list of participants of the trip the current payments belongs to. If the payment you are adding is a personal payment, just select yourself (selected by default), otherwise if it is a group payment tap the </span><em><span>checkbox</span></em><span> near each user that will be a participant of that payment, the amount splitting will be done automatically and shown near each user you select. In order to select all the participants in a single tap, check the </span><em><span>Select all</span></em><span> checkbox, in order to cancel all the selections, tap the </span><em><span>Reset</span></em><span> button.</span></p><p><span>Once you have chosen all the participants, tap the </span><em><span>done</span></em><span> button:</span></p><p><img src='add_payment_3.png' alt='picture' referrerPolicy='no-referrer' /></p><h1><a name="pay-off-a-debt" class="md-header-anchor"></a><span>Pay off a debt</span></h1><p><span>If you want to get rid of a debt, go to the </span><strong><span>Payments</span></strong><span> tab of a Trip Page and go to the </span><strong><span>Overview</span></strong><span> section. You will see a floating button on the bottom-left of the page. Tap on it and select </span><em><span>Pay off debt</span></em><span>:</span></p><p><img src='goto_payoff.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>You get into the following page:</span></p><p><img src='payoff_page.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>on the right of the arrow, you can select the participant that will receive the amount of money, while below the arrow you can select the amount. Below the amount, it will be displayed the remaining debt you still owe to that participant if any, in particular:</span></p><ul><li><span>If you pay an amount higher than the debt, then the other participant will owe to you the remainder</span></li><li><span>If you pay the exact amount of the debt, the debt will be fixed</span></li><li><span>If you pay an amount lower than the debt, then you will still owe to that participant the remainder</span></li></ul><p><span>Once you have chosen the amount, tap on </span><strong><span>Pay</span></strong><span> to let the app to do the computation and to update the payments overview of the trip.</span></p><h1><a name="payment-page" class="md-header-anchor"></a><span>Payment page</span></h1><p><span>You can always return to a payment that has been done for a trip in order to view its details. Go to the </span><strong><span>History</span></strong><span> section of the </span><strong><span>Payments</span></strong><span> tab of a trip page. </span></p><p><span>A list of all the payments of the trip will appear, tap to the target one.</span></p><p><span>You will get to a page where a payment recap is show, in terms of description, total amout, date of payment and a list of participants for that payment, togheter with the amount payed by each one:</span></p><p><img src='payment_recap.png' alt='picture' referrerPolicy='no-referrer' /></p><h1><a name="edit/delete-a-payment" class="md-header-anchor"></a><span>Edit/Delete a payment</span></h1><p><span>You can always return to a payment that has been done for a trip in order to edit its details (e.g. the amount, the participants and so on). In order to edit it, just go to the payment page, you will see a </span><em><span>pencil icon</span></em><span> on the top right, tap on it:</span></p><p><img src='goto_edit_payment.png' alt='picture' referrerPolicy='no-referrer' /></p><p><span>Now it will be displayed a page identical to the one when you add a payment, so as you inserted the fields of that payment in the same way you can edit them. A for the </span><em><span>Add payment</span></em><span> steps, you have to tap on the </span><strong><span>continue</span></strong><span> button and finally, in the last page, on the </span><strong><span>done</span></strong><span> button.</span></p><p><span>If you instead want to </span><strong><span>delete</span></strong><span> a payment, it is sufficient, in the </span><em><span>Edit payment</span></em><span> page, to tap on the </span><em><span>trash icon</span></em><span> on the top right, and tap on the </span><strong><span>red delete button</span></strong><span> in the dialog that pops up:</span></p><p><img src='delete_payment.png' alt='picture' referrerPolicy='no-referrer' /></p><p>&nbsp;</p></div>
+</body>
+</html>
