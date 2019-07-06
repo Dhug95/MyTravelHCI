@@ -78,7 +78,7 @@ public class TripPaymentFragment extends Fragment {
                 case 0:
                     return new PaymentsOverviewFragment();
                 case 1:
-                    return new HomeSlideSecond();
+                    return new PaymentsHistoryFragment();
                 default:
                     throw new IllegalStateException();
             }
