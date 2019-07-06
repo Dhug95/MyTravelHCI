@@ -15,12 +15,15 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.FrameLayout;
 
 import com.example.mytravelhci.R;
@@ -44,29 +47,11 @@ public class TripPageActivity extends AppCompatActivity {
 
     private Drawer drawer;
     private Context thisContext = this;
-    private TabLayout tabs;
-    private FrameLayout frame;
-
-    private final int NUM_PAGES = 2;
-
-    /**
-     * The pager widget, which handles animation and allows swiping horizontally to access previous
-     * and next wizard steps.
-     */
-    private ViewPager mPager;
-
-    /**
-     * The pager adapter, which provides the pages to the view pager widget.
-     */
-    private PagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trip_page);
-
-        tabs = findViewById(R.id.tabs);
-        frame = findViewById(R.id.container);
 
         Intent intent = getIntent();
         boolean created_now = intent.getBooleanExtra("created_now", false);
@@ -100,20 +85,11 @@ public class TripPageActivity extends AppCompatActivity {
         infoFragment = new TripInfoFragment();
         paymentFragment = new TripPaymentFragment();
 
+        setFragment(infoFragment);
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        // Instantiate a ViewPager and a PagerAdapter.
-        pagerAdapter = new TripPageActivity.ScreenSlidePagerAdapter(getSupportFragmentManager());
-        mPager = (ViewPager) findViewById(R.id.pager_container);
-        mPager.setAdapter(pagerAdapter);
-
-        mPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabs));
-        tabs.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mPager));
-
-        mPager.setVisibility(View.GONE);
-        tabs.setVisibility(View.GONE);
-        setFragment(new TripInfoFragment());
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -124,15 +100,9 @@ public class TripPageActivity extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.trip_info:
-                    mPager.setVisibility(View.GONE);
-                    tabs.setVisibility(View.GONE);
-                    frame.setVisibility(View.VISIBLE);
                     setFragment(infoFragment);
                     return true;
                 case R.id.payment:
-                    frame.setVisibility(View.GONE);
-                    mPager.setVisibility(View.VISIBLE);
-                    tabs.setVisibility(View.VISIBLE);
                     setFragment(paymentFragment);
                     return true;
             }
@@ -189,35 +159,5 @@ public class TripPageActivity extends AppCompatActivity {
                 })
                 .show();
         ad.getButton(ad.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.customRed));
-    }
-
-    /**
-     * A simple pager adapter that represents 3 HomeSlide objects, in
-     * sequence.
-     */
-    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-        public ScreenSlidePagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            switch (position) {
-                case 0:
-                    return new HomeSlideFirst();
-                case 1:
-                    return new HomeSlideSecond();
-                case 2:
-                    return new HomeSlideThird();
-                default:
-                    throw new IllegalStateException();
-            }
-        }
-
-        @Override
-        public int getCount() {
-            return NUM_PAGES;
-        }
-
     }
 }
