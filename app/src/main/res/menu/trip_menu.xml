@@ -7,12 +7,14 @@
         android:id="@+id/action_edit_trip"
         android:orderInCategory="10"
         android:title="Edit"
+        android:onClick="goToEdit"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/action_delete_trip"
         android:orderInCategory="20"
         android:title="Delete"
+        android:onClick="deleteTrip"
         app:showAsAction="never" />
 
 </menu>

@@ -1,15 +1,19 @@
 package com.example.mytravelhci.activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,6 +34,7 @@ public class TripPageActivity extends AppCompatActivity {
     private TripPaymentFragment paymentFragment;
 
     private Drawer drawer;
+    private Context thisContext = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +53,8 @@ public class TripPageActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        toolbar.getOverflowIcon().setColorFilter(ContextCompat.getColor(this, R.color.md_white_1000), PorterDuff.Mode.SRC_ATOP);
+        //toolbar.getOverflowIcon().setColorFilter(ContextCompat.getColor(this, R.color.md_white_1000), PorterDuff.Mode.SRC_ATOP);
+        toolbar.setOverflowIcon(getDrawable(R.drawable.ic_dots_white_24dp));
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
@@ -109,5 +115,27 @@ public class TripPageActivity extends AppCompatActivity {
 
     public void openDrawer(View view) {
         drawer.openDrawer();
+    }
+
+    public void goToEdit(MenuItem item) {
+    }
+
+    public void deleteTrip(MenuItem item) {
+        AlertDialog ad = new AlertDialog.Builder(this)
+                .setTitle("Confirm deletion")
+                .setMessage("Are you sure you want to delete this trip?")
+                .setPositiveButton("Cancel", null)
+                .setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog,
+                                        int which) {
+                        Intent intent = new Intent(thisContext, LoggedHomeActivity.class);
+                        intent.putExtra("frag_to_set", "trips");
+                        intent.putExtra("deleted", true);
+                        thisContext.startActivity(intent);
+                    }
+                })
+                .show();
+        ad.getButton(ad.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.customRed));
     }
 }

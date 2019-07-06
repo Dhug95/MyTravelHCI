@@ -36,6 +36,7 @@ public class LoggedHomeActivity extends AppCompatActivity {
 
     private Drawer drawer;
     private String frag_to_set;
+    private Boolean deleted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +75,7 @@ public class LoggedHomeActivity extends AppCompatActivity {
         if (frag_to_set == null) {
             frag_to_set = "home";
         }
+        deleted = intent.getBooleanExtra("deleted", false);
         Log.i("IL FRAGMENT TO SELECT È: ", frag_to_set);
         switch (frag_to_set) {
             case "home": {
@@ -84,6 +86,12 @@ public class LoggedHomeActivity extends AppCompatActivity {
             case "trips": {
                 setFragment(tripsFragment);
                 navigation.setSelectedItemId(R.id.myTrips);
+                if (deleted) {
+                    Snackbar mySnackbar = Snackbar.make(findViewById(R.id.coordinator_logged),
+                            "Trip deleted.", Snackbar.LENGTH_SHORT);
+                    mySnackbar.getView().setBackgroundResource(R.color.customGreen);
+                    mySnackbar.show();
+                }
                 break;
             }
             case "profile": {
