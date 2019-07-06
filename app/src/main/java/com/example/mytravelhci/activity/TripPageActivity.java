@@ -6,7 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,13 +21,18 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 
 import com.example.mytravelhci.R;
 import com.example.mytravelhci.SideMenuClass;
+import com.example.mytravelhci.fragment.HomeSlideFirst;
+import com.example.mytravelhci.fragment.HomeSlideSecond;
+import com.example.mytravelhci.fragment.HomeSlideThird;
 import com.example.mytravelhci.fragment.TripInfoFragment;
 import com.example.mytravelhci.fragment.TripPaymentFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
 import com.mikepenz.materialdrawer.Drawer;
 
 import java.util.Objects;
@@ -35,15 +44,33 @@ public class TripPageActivity extends AppCompatActivity {
 
     private Drawer drawer;
     private Context thisContext = this;
+    private TabLayout tabs;
+    private FrameLayout frame;
+
+    private final int NUM_PAGES = 2;
+
+    /**
+     * The pager widget, which handles animation and allows swiping horizontally to access previous
+     * and next wizard steps.
+     */
+    private ViewPager mPager;
+
+    /**
+     * The pager adapter, which provides the pages to the view pager widget.
+     */
+    private PagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trip_page);
 
+        tabs = findViewById(R.id.tabs);
+        frame = findViewById(R.id.container);
+
         Intent intent = getIntent();
-        Boolean created_now = intent.getBooleanExtra("created_now", false);
-        Boolean edited = intent.getBooleanExtra("edited", false);
+        boolean created_now = intent.getBooleanExtra("created_now", false);
+        boolean edited = intent.getBooleanExtra("edited", false);
         if (created_now) {
             Snackbar mySnackbar = Snackbar.make(findViewById(R.id.coordinator_logged),
                     "Trip created!", Snackbar.LENGTH_SHORT);
@@ -75,8 +102,18 @@ public class TripPageActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        setFragment(new TripInfoFragment());
 
+        // Instantiate a ViewPager and a PagerAdapter.
+        pagerAdapter = new TripPageActivity.ScreenSlidePagerAdapter(getSupportFragmentManager());
+        mPager = (ViewPager) findViewById(R.id.pager_container);
+        mPager.setAdapter(pagerAdapter);
+
+        mPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabs));
+        tabs.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mPager));
+
+        mPager.setVisibility(View.GONE);
+        tabs.setVisibility(View.GONE);
+        setFragment(new TripInfoFragment());
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -87,9 +124,15 @@ public class TripPageActivity extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.trip_info:
+                    mPager.setVisibility(View.GONE);
+                    tabs.setVisibility(View.GONE);
+                    frame.setVisibility(View.VISIBLE);
                     setFragment(infoFragment);
                     return true;
                 case R.id.payment:
+                    frame.setVisibility(View.GONE);
+                    mPager.setVisibility(View.VISIBLE);
+                    tabs.setVisibility(View.VISIBLE);
                     setFragment(paymentFragment);
                     return true;
             }
@@ -146,5 +189,35 @@ public class TripPageActivity extends AppCompatActivity {
                 })
                 .show();
         ad.getButton(ad.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.customRed));
+    }
+
+    /**
+     * A simple pager adapter that represents 3 HomeSlide objects, in
+     * sequence.
+     */
+    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+        public ScreenSlidePagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0:
+                    return new HomeSlideFirst();
+                case 1:
+                    return new HomeSlideSecond();
+                case 2:
+                    return new HomeSlideThird();
+                default:
+                    throw new IllegalStateException();
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return NUM_PAGES;
+        }
+
     }
 }

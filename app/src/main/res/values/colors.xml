@@ -18,5 +18,6 @@
     <color name="blueArch">#1793D1</color>
     <color name="blueTopBar">#0071CD</color>
     <color name="fabColor">#00CD5C</color>
+    <color name="tabNotSelected">#79B5E6</color>
 
 </resources>
