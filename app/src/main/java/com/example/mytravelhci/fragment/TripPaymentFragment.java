@@ -15,6 +15,8 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.mytravelhci.R;
 import com.example.mytravelhci.activity.MainActivity;
 import com.google.android.material.tabs.TabLayout;
+import com.leinardi.android.speeddial.SpeedDialActionItem;
+import com.leinardi.android.speeddial.SpeedDialView;
 
 public class TripPaymentFragment extends Fragment {
 
@@ -56,8 +58,37 @@ public class TripPaymentFragment extends Fragment {
         mPager.setAdapter(pagerAdapter);
 
         TabLayout tabLayout = (TabLayout) v.findViewById(R.id.tabs);
-
         mPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mPager));
+
+        SpeedDialView speedDialView = v.findViewById(R.id.speedDial);
+
+        speedDialView.addActionItem(
+                new SpeedDialActionItem.Builder(R.id.fab_debt_payment, R.drawable.debt_payment_white)
+                        .setLabel("Pay off debt")
+                        .create()
+        );
+
+        speedDialView.addActionItem(
+                new SpeedDialActionItem.Builder(R.id.fab_my_payment, R.drawable.my_payment_white)
+                        .setLabel("Add payment")
+                        .create()
+        );
+
+        speedDialView.setOnActionSelectedListener(new SpeedDialView.OnActionSelectedListener() {
+            @Override
+            public boolean onActionSelected(SpeedDialActionItem speedDialActionItem) {
+                switch (speedDialActionItem.getId()) {
+                    case R.id.fab_my_payment:
+                        return false; // true to keep the Speed Dial open
+                    case R.id.fab_debt_payment:
+                        return false; // true to keep the Speed Dial open
+                    default:
+                        return false;
+                }
+            }
+        });
 
         // Inflate the layout for this fragment
         return v;

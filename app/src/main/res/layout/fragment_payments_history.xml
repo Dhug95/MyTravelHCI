@@ -29,7 +29,6 @@
 
             <TextView
                 android:id="@+id/pay_1"
-                android:textSize="24sp"
                 style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,41 +36,93 @@
                 android:drawablePadding="16dp"
                 android:gravity="center"
                 android:text="T-shirt"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/price_1"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-€10.00"
+                android:textColor="@color/customRed"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pay_1" />
+
+            <TextView
+                android:id="@+id/date_1"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23/04/2019"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price_1" />
 
             <View
                 android:id="@+id/first_line"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_below="@id/pay_1"
-                android:layout_marginTop="16dp"
-                android:background="@color/statusColor"
+                android:layout_marginTop="24dp"
+                android:background="@color/customGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/pay_1" />
 
             <TextView
                 android:id="@+id/pay_2"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:textSize="24sp"
                 style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:drawableStart="@drawable/ic_men_40"
                 android:drawablePadding="16dp"
+                android:gravity="center"
                 android:text="Pizza"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/first_line" />
+
+            <TextView
+                android:id="@+id/price_2"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-€15.50"
+                android:textColor="@color/customRed"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/total_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/first_line" />
+
+            <TextView
+                android:id="@+id/total_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total: €62.00"
+                app:layout_constraintBottom_toTopOf="@id/date_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price_2" />
+
+            <TextView
+                android:id="@+id/date_2"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24/04/2019"
+                app:layout_constraintBottom_toTopOf="@id/second_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/total_2" />
 
             <View
                 android:id="@+id/second_line"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_below="@id/pay_2"
-                android:layout_marginTop="16dp"
-                android:background="@color/statusColor"
+                android:layout_marginTop="24dp"
+                android:background="@color/customGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/pay_2" />
@@ -80,28 +131,58 @@
                 android:id="@+id/pay_3"
                 style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="wrap_content"
-                android:textSize="24sp"
-                android:gravity="center"
-                android:layout_marginTop="16dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:drawableStart="@drawable/ic_men_40"
                 android:drawablePadding="16dp"
+                android:gravity="center"
                 android:text="Fuel"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/second_line" />
 
-            <!--
+            <TextView
+                android:id="@+id/price_3"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-€10.00"
+                android:textColor="@color/customRed"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/total_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/second_line" />
+
+            <TextView
+                android:id="@+id/total_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total: €40.00"
+                app:layout_constraintBottom_toTopOf="@id/date_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price_3" />
+
+            <TextView
+                android:id="@+id/date_3"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25/04/2019"
+                app:layout_constraintBottom_toTopOf="@id/third_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/total_3" />
+
             <View
                 android:id="@+id/third_line"
                 android:layout_width="0dp"
+                android:visibility="invisible"
                 android:layout_height="1dp"
                 android:layout_below="@id/pay_3"
-                android:layout_marginTop="16dp"
-                android:background="@color/statusColor"
+                android:layout_marginTop="24dp"
+                android:background="@color/customGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/pay_3" />
-                -->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
