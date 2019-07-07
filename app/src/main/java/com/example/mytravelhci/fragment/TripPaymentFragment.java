@@ -1,5 +1,6 @@
 package com.example.mytravelhci.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.mytravelhci.R;
+import com.example.mytravelhci.activity.AddPaymentActivity;
 import com.example.mytravelhci.activity.MainActivity;
 import com.google.android.material.tabs.TabLayout;
 import com.leinardi.android.speeddial.SpeedDialActionItem;
@@ -81,6 +83,8 @@ public class TripPaymentFragment extends Fragment {
             public boolean onActionSelected(SpeedDialActionItem speedDialActionItem) {
                 switch (speedDialActionItem.getId()) {
                     case R.id.fab_my_payment:
+                        Intent intent = new Intent(getContext(), AddPaymentActivity.class);
+                        getContext().startActivity(intent);
                         return false; // true to keep the Speed Dial open
                     case R.id.fab_debt_payment:
                         return false; // true to keep the Speed Dial open

@@ -42,8 +42,9 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
             EditTrip activity = (EditTrip) getActivity();
             activity.processDatePickerResult(year, month, day, getTag());
         }
-        else{
-
+        else if (getActivity().getClass().toString().contains("AddPaymentActivity")){
+            AddPaymentActivity activity = (AddPaymentActivity) getActivity();
+            activity.processDatePickerResult(year, month, day, getTag());
         }
     }
 }
