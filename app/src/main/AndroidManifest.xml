@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shrine">
+        <activity android:name=".activity.Payment_Recap"
+            android:exported="true"></activity>
         <activity
             android:name=".activity.CostSplitActivity"
-            android:parentActivityName=".activity.AddPaymentActivity"></activity>
+            android:parentActivityName=".activity.AddPaymentActivity" />
         <activity
             android:name=".activity.AddPaymentActivity"
             android:exported="true"
