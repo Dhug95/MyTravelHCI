@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -22,8 +23,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:scaleType="centerCrop"
             android:contentDescription="@string/trip_description"
+            android:scaleType="centerCrop"
             android:src="@drawable/colosseo" />
 
 
@@ -33,43 +34,114 @@
         android:id="@+id/departing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:clickable="true"
+        android:drawableStart="@drawable/ic_date_range_black_24dp"
         android:ems="10"
         android:focusable="false"
-        android:text="23/04/2019"
-        android:drawableStart="@drawable/ic_date_range_black_24dp"
-        app:layout_constraintEnd_toStartOf="@id/arrival"
-        android:textAlignment="center"
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rome_card"
-        android:layout_marginTop="16dp"
+        android:text="23/04/2019"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:layout_marginStart="16dp"
-        />
-
+        app:layout_constraintEnd_toStartOf="@id/arrival"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rome_card" />
 
 
     <TextView
         android:id="@+id/arrival"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textAlignment="center"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:clickable="true"
-        android:ems="10"
-        android:layout_marginTop="16dp"
-        android:text="28/04/2019"
         android:drawableStart="@drawable/ic_date_range_black_24dp"
+        android:ems="10"
         android:focusable="false"
-        app:layout_constraintStart_toEndOf="@id/departing"
-        app:layout_constraintTop_toBottomOf="@+id/rome_card"
+        android:gravity="center"
+        android:text="28/04/2019"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+        app:layout_constraintStart_toEndOf="@id/departing"
+        app:layout_constraintTop_toBottomOf="@+id/rome_card" />
+
+    <View
+        android:id="@+id/divider_part"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/customGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/arrival"></View>
+
+    <TextView
+        android:id="@+id/participant"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="Participants"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_part" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/chart_card"
+        style="@style/CardView.Light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="25dp"
+        app:cardCornerRadius="5dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/participant"
+        android:layout_marginTop="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:minHeight="100dp"
+            android:padding="8dp">
 
 
+            <TextView
+                android:id="@+id/Mario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_man_40"
+                android:drawablePadding="@dimen/android_default_padding"
+                android:gravity="center"
+                android:text="Mario Biondi"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Bruno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:drawableStart="@drawable/ic_man_40"
+
+            android:drawablePadding="@dimen/android_default_padding"
+            android:gravity="center"
+            android:text="Bruno Ciciani"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Mario" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
