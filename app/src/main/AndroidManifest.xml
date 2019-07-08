@@ -19,11 +19,14 @@
         <activity
             android:name=".activity.TripPageActivity"
             android:exported="true"
+            android:launchMode="singleTop"
             android:parentActivityName=".activity.LoggedHomeActivity" />
         <activity
             android:name=".activity.Documentation"
             android:exported="true" />
-        <activity android:name=".activity.LoggedHomeActivity" />
+        <activity
+            android:name=".activity.LoggedHomeActivity"
+            android:launchMode="singleTop" />
         <activity
             android:name=".activity.NotLoggedHomeActivity"
             android:exported="true" />
