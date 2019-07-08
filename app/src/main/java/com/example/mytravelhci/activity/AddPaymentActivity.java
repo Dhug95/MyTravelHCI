@@ -77,4 +77,9 @@ public class AddPaymentActivity extends AppCompatActivity {
 
         }
     }
+
+    public void goToSplit(View view) {
+        Intent intent = new Intent(this, CostSplitActivity.class);
+        startActivity(intent);
+    }
 }

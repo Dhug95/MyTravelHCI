@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shrine">
         <activity
+            android:name=".activity.CostSplitActivity"
+            android:parentActivityName=".activity.AddPaymentActivity"></activity>
+        <activity
             android:name=".activity.AddPaymentActivity"
             android:exported="true"
-            android:parentActivityName=".activity.TripPageActivity"></activity>
+            android:parentActivityName=".activity.TripPageActivity" />
         <activity
             android:name=".activity.TripPageActivity"
             android:exported="true"
