@@ -38,6 +38,8 @@ public class LoggedHomeActivity extends AppCompatActivity {
     private String frag_to_set;
     private Boolean deleted;
 
+    private BottomNavigationView navigation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +69,7 @@ public class LoggedHomeActivity extends AppCompatActivity {
         tripsFragment = new TripsFragment();
         profileFragment = new ProfileFragment();
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         // Choose which fragment to set
@@ -118,6 +120,41 @@ public class LoggedHomeActivity extends AppCompatActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
+        // Choose which fragment to set
+        frag_to_set = intent.getStringExtra("frag_to_set");
+        if (frag_to_set == null) {
+            frag_to_set = "home";
+        }
+        deleted = intent.getBooleanExtra("deleted", false);
+        Log.i("IL FRAGMENT TO SELECT È: ", frag_to_set);
+        switch (frag_to_set) {
+            case "home": {
+                setFragment(homeFragment);
+                navigation.setSelectedItemId(R.id.home);
+                break;
+            }
+            case "trips": {
+                setFragment(tripsFragment);
+                navigation.setSelectedItemId(R.id.myTrips);
+                if (deleted) {
+                    Snackbar mySnackbar = Snackbar.make(findViewById(R.id.coordinator_logged),
+                            "Trip deleted.", Snackbar.LENGTH_SHORT);
+                    mySnackbar.getView().setBackgroundResource(R.color.customGreen);
+                    mySnackbar.show();
+                }
+                break;
+            }
+            case "profile": {
+                setFragment(profileFragment);
+                navigation.setSelectedItemId(R.id.myProfile);
+                break;
+            }
+            default: {
+                setFragment(homeFragment);
+                navigation.setSelectedItemId(R.id.home);
+                break;
+            }
+        }
     }
 
     @Override

@@ -61,5 +61,8 @@ public class PayDebtActivity extends AppCompatActivity {
     }
 
     public void goToPayment(View view) {
+        Intent intent = new Intent(this, TripPageActivity.class);
+        intent.putExtra("frag_to_set", "payments");
+        startActivity(intent);
     }
 }

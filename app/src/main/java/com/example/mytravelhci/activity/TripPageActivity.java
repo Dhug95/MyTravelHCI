@@ -85,7 +85,26 @@ public class TripPageActivity extends AppCompatActivity {
         infoFragment = new TripInfoFragment();
         paymentFragment = new TripPaymentFragment();
 
-        setFragment(infoFragment);
+        String frag_to_set;
+        frag_to_set = intent.getStringExtra("frag_to_set");
+        if (frag_to_set == null) {
+            setFragment(infoFragment);
+        } else {
+            switch (frag_to_set) {
+                case "info": {
+                    setFragment(infoFragment);
+                    break;
+                }
+                case "payments": {
+                    setFragment(paymentFragment);
+                    break;
+                }
+                default: {
+                    setFragment(infoFragment);
+                    break;
+                }
+            }
+        }
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

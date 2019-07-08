@@ -45,20 +45,25 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password"
+        android:id="@+id/til_password_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="Password"
+        app:counterEnabled="true"
+        app:counterMaxLength="8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email">
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:maxLength="8" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,11 +74,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="Confirm Password"
+        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password">
+        app:layout_constraintTop_toBottomOf="@+id/til_password_layout"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pwd_confirm_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />
@@ -84,15 +92,15 @@
         android:id="@+id/currencySpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@id/currencyLabel"
         app:layout_constraintTop_toBottomOf="@+id/confpassword" />
 
     <TextView
         android:id="@+id/currencyLabel"
-        android:layout_width="wrap_content"
         style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Your currency:"
         app:layout_constraintBottom_toBottomOf="@+id/currencySpinner"
@@ -106,16 +114,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/android_default_padding"
-        app:strokeColor="@color/statusColor"
         android:layout_marginTop="8dp"
-        app:cornerRadius="50dp"
         android:onClick="startHome"
         android:text="Create account"
         android:textColor="@color/statusColor"
+        app:cornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confpassword"
+        app:strokeColor="@color/statusColor"
         app:strokeWidth="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
