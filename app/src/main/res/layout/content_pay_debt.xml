@@ -9,96 +9,229 @@
     tools:context=".activity.PayDebtActivity"
     tools:showIn="@layout/activity_pay_debt">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/name"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/from_text"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Username"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:text="From:"
+        app:layout_constraintEnd_toEndOf="@id/from_img"
+        app:layout_constraintStart_toStartOf="@id/from_img"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/email"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/to_text"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name">
+        android:text="To:"
+        app:layout_constraintEnd_toEndOf="@id/to_img"
+        app:layout_constraintStart_toStartOf="@id/to_img"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/from_img"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="Password"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_man_64"
+        app:layout_constraintEnd_toStartOf="@id/right_arrow"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email">
+        app:layout_constraintTop_toBottomOf="@id/from_text" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/confpassword"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+    <ImageButton
+        android:id="@+id/to_img"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="Confirm Password"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="chooseUser"
+        android:src="@drawable/ic_man_64"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password">
+        app:layout_constraintStart_toEndOf="@id/right_arrow"
+        app:layout_constraintTop_toBottomOf="@id/to_text" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+    <ImageView
+        android:id="@+id/right_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_right_arrow_36"
+        app:layout_constraintBottom_toBottomOf="@id/to_img"
+        app:layout_constraintEnd_toStartOf="@id/to_img"
+        app:layout_constraintStart_toEndOf="@id/from_img"
+        app:layout_constraintTop_toTopOf="@id/from_img" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/sender"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="You"
+        app:layout_constraintEnd_toEndOf="@id/from_img"
+        app:layout_constraintStart_toStartOf="@id/from_img"
+        app:layout_constraintTop_toBottomOf="@id/from_img" />
+
+    <TextView
+        android:id="@+id/receiver"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="User 2"
+        app:layout_constraintEnd_toEndOf="@id/to_img"
+        app:layout_constraintStart_toStartOf="@id/to_img"
+        app:layout_constraintTop_toBottomOf="@id/to_img" />
+
+    <TextView
+        android:id="@+id/howmuch_text"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="How much?"
+        app:layout_constraintEnd_toEndOf="@id/right_arrow"
+        app:layout_constraintStart_toStartOf="@id/right_arrow"
+        app:layout_constraintTop_toBottomOf="@id/receiver" />
 
     <com.jaredrummler.materialspinner.MaterialSpinner
         android:id="@+id/currencySpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@id/howmuch_text"
+        app:layout_constraintStart_toStartOf="@id/howmuch_text"
+        app:layout_constraintTop_toBottomOf="@id/howmuch_text" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/money_value"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@id/currencySpinner"
+        app:layout_constraintStart_toStartOf="@id/currencySpinner"
+        app:layout_constraintTop_toBottomOf="@+id/currencySpinner">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Value"
+            android:inputType="numberDecimal"
+            android:text="5.65"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/first_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toEndOf="@id/currencyLabel"
-        app:layout_constraintTop_toBottomOf="@+id/confpassword" />
+        android:background="@color/customGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/money_value" />
 
     <TextView
-        android:id="@+id/currencyLabel"
-        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:id="@+id/your_balance"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your currency:"
-        app:layout_constraintBottom_toBottomOf="@+id/currencySpinner"
-        app:layout_constraintEnd_toStartOf="@+id/currencySpinner"
+        android:layout_marginTop="16dp"
+        android:text="Your balance"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/currencySpinner" />
+        app:layout_constraintTop_toBottomOf="@id/first_line" />
+
+    <TextView
+        android:id="@+id/before_text_sender"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Before:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/your_balance" />
+
+    <TextView
+        android:id="@+id/before_value_sender"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="-€5.65"
+        android:textColor="@color/customRed"
+        app:layout_constraintStart_toEndOf="@id/before_text_sender"
+        app:layout_constraintTop_toBottomOf="@id/your_balance" />
+
+    <TextView
+        android:id="@+id/after_sender"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="After: €0.00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/your_balance" />
+
+    <View
+        android:id="@+id/second_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/customGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/after_sender" />
+
+    <TextView
+        android:id="@+id/his_balance"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="User balance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/second_line" />
+
+    <TextView
+        android:id="@+id/before_text_receiver"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Before:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/his_balance" />
+
+    <TextView
+        android:id="@+id/before_value_receiver"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="+€5.65"
+        android:textColor="@color/customGreen"
+        app:layout_constraintStart_toEndOf="@id/before_text_receiver"
+        app:layout_constraintTop_toBottomOf="@id/his_balance" />
+
+    <TextView
+        android:id="@+id/after_receiver"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="After: €0.00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/his_balance" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signupButton"
@@ -107,14 +240,16 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/android_default_padding"
         android:layout_marginTop="8dp"
-        android:text="Create account"
+        android:text="Confirm payment"
+        android:onClick="goToPayment"
         android:textColor="@color/statusColor"
         app:cornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confpassword"
+        app:layout_constraintTop_toBottomOf="@+id/before_text_receiver"
         app:strokeColor="@color/statusColor"
         app:strokeWidth="2dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
