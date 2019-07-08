@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/android_default_padding"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.EditPayment"
+    tools:showIn="@layout/activity_edit_payment">
+
+    <ImageView
+        android:id="@+id/pay_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bank_pay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/description"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/pay_img"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:text="Pizza"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/amount"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/pay_img"
+        app:layout_constraintTop_toBottomOf="@+id/description">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:text="€63.00"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/first_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/customGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pay_img" />
+
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/currencySpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/currencyLabel"
+        app:layout_constraintTop_toBottomOf="@id/first_line" />
+
+    <TextView
+        android:id="@+id/currencyLabel"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Currency:"
+        app:layout_constraintBottom_toBottomOf="@id/currencySpinner"
+        app:layout_constraintEnd_toStartOf="@id/currencySpinner"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/currencySpinner" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/currencyButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get from location"
+        android:textColor="@color/statusColor"
+        app:cornerRadius="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currencySpinner"
+        app:strokeColor="@color/statusColor"
+        app:strokeWidth="2dp" />
+
+    <EditText
+        android:id="@+id/departing"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:ems="10"
+        android:focusable="false"
+        android:text="29/04/2019"
+        android:onClick="showDatePicker"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="@id/departingButton"
+        app:layout_constraintEnd_toStartOf="@id/departingButton"
+        app:layout_constraintStart_toStartOf="@id/nextButton"
+        app:layout_constraintTop_toTopOf="@+id/departingButton" />
+
+    <View
+        android:id="@+id/second_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/customGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currencyButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/departingButton"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/statusColor"
+        android:onClick="showDatePicker"
+        app:icon="@drawable/date_black_24dp"
+        app:layout_constraintEnd_toEndOf="@id/nextButton"
+        app:layout_constraintStart_toEndOf="@+id/departing"
+        app:layout_constraintTop_toBottomOf="@id/second_line" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nextButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Continue"
+        android:onClick="goToSplit"
+        android:textColor="@color/statusColor"
+        app:cornerRadius="50dp"
+        app:icon="@drawable/ic_right_arrow_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/departingButton"
+        app:strokeColor="@color/statusColor"
+        app:strokeWidth="2dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
