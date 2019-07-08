@@ -48,24 +48,10 @@ public class TripPageActivity extends AppCompatActivity {
     private Drawer drawer;
     private Context thisContext = this;
 
-    private Bundle bundle;
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trip_page);
-
-        bundle = new Bundle();
 
         Intent intent = getIntent();
         boolean created_now = intent.getBooleanExtra("created_now", false);
@@ -99,7 +85,6 @@ public class TripPageActivity extends AppCompatActivity {
         infoFragment = new TripInfoFragment();
         paymentFragment = new TripPaymentFragment();
 
-        infoFragment.setArguments(bundle);
         setFragment(infoFragment);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -115,11 +100,9 @@ public class TripPageActivity extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.trip_info:
-                    infoFragment.setArguments(bundle);
                     setFragment(infoFragment);
                     return true;
                 case R.id.payment:
-                    paymentFragment.setArguments(bundle);
                     setFragment(paymentFragment);
                     return true;
             }
