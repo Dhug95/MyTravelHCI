@@ -44,7 +44,7 @@ You will find the email and the username that identify you (which cannot be chan
 
 Adding a trip is quite simple. Either you click on the *Add a trip* button in the homepage or you click the *floating button* in *My trips* page. You will be presented with the following page:
 
-![picture](add_trip.jpg)
+![picture](add_trip.png)
 
 Then, with the *Choose picture* button you can choose a picture for the trip, then you can insert the name of the trip in the *Trip name* text field, and departure and return dates by simple clicking to the calendar button and choosing the date from the google calendar that blows up. Then you can start choosing the participants of the trip, by just searching them in the *Add participants* section, typing their **Usernames**. Finally, you can optionally add the destinations your trip will be composed of and a simple text note useful for remember something. Once you have done, tap on *CREATE TRIP* button.
 
@@ -164,3 +164,4 @@ If you instead want to **delete** a payment, it is sufficient, in the *Edit paym
 
 ![picture](delete_payment.png)
 
++
