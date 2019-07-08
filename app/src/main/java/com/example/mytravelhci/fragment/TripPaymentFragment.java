@@ -17,6 +17,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.mytravelhci.R;
 import com.example.mytravelhci.activity.AddPaymentActivity;
 import com.example.mytravelhci.activity.MainActivity;
+import com.example.mytravelhci.activity.PayDebtActivity;
 import com.google.android.material.tabs.TabLayout;
 import com.leinardi.android.speeddial.SpeedDialActionItem;
 import com.leinardi.android.speeddial.SpeedDialView;
@@ -88,6 +89,8 @@ public class TripPaymentFragment extends Fragment {
                         getContext().startActivity(intent);
                         return false; // true to keep the Speed Dial open
                     case R.id.fab_debt_payment:
+                        Intent intent2 = new Intent(getContext(), PayDebtActivity.class);
+                        getContext().startActivity(intent2);
                         return false; // true to keep the Speed Dial open
                     default:
                         return false;
