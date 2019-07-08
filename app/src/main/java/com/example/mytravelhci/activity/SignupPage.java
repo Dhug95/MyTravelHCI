@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 
 import com.example.mytravelhci.R;
@@ -20,9 +21,12 @@ import com.jaredrummler.materialspinner.MaterialSpinner;
 
 public class SignupPage extends AppCompatActivity {
 
-    TextInputEditText tlEtPassword;
-
     TextInputLayout tilPasswordLayout;
+    TextInputLayout tilPasswordConfirmLayout;
+
+    TextInputEditText tlEtPassword;
+    TextInputEditText tlEtPasswordConfirm;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +34,13 @@ public class SignupPage extends AppCompatActivity {
         setContentView(R.layout.activity_signup_page);
 
         tilPasswordLayout = (TextInputLayout) findViewById(R.id.til_password_layout);
+        tilPasswordConfirmLayout = (TextInputLayout) findViewById(R.id.til_password_confirm_layout);
 
         tlEtPassword = (TextInputEditText) findViewById(R.id.tiet_password);
+        tlEtPasswordConfirm = (TextInputEditText) findViewById(R.id.tiet_password_confirm);
 
-        tlEtPassword.addTextChangedListener(new EditTextWatcher(this, tilPasswordLayout, tlEtPassword));
+        tlEtPasswordConfirm.addTextChangedListener(new EditTextWatcher(this, tilPasswordLayout, tlEtPassword,
+                tilPasswordConfirmLayout, tlEtPasswordConfirm));
 
         MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.currencySpinner);
         spinner.setItems("Select", "EUR", "JPY", "USD", "GBP");
@@ -76,13 +83,22 @@ public class SignupPage extends AppCompatActivity {
 
         Context context;
 
-        public EditTextWatcher(Context con, TextInputLayout layout, TextInputEditText view) {
+        TextInputLayout layout_confirm;
+
+        TextInputEditText view_confirm;
+
+        public EditTextWatcher(Context con, TextInputLayout layout, TextInputEditText view,
+                               TextInputLayout layout_confirm, TextInputEditText view_confirm) {
 
             this.view = view;
 
             this.layout = layout;
 
             this.context = con;
+
+            this.view_confirm = view_confirm;
+
+            this.layout_confirm = layout_confirm;
 
         }
 
@@ -102,23 +118,26 @@ public class SignupPage extends AppCompatActivity {
 
         public void afterTextChanged(Editable editable) {
 
-            switch (view.getId()) {
+            String PASSWORD = tlEtPassword.getText().toString();
+            String CONFIRM_PASSWORD = tlEtPasswordConfirm.getText().toString();
 
-                case R.id.tiet_password:
+            switch (view_confirm.getId()) {
 
-                    if (isPasswordValid(tlEtPassword.getText().toString()) == false) {
+                case R.id.tiet_password_confirm: {
 
-                        tilPasswordLayout.setError("Invalid Password");
 
-                        tlEtPassword.requestFocus();
+                    if (!isPasswordValid(PASSWORD, CONFIRM_PASSWORD)) {
+
+                        tilPasswordConfirmLayout.setError("Passwords don't match");
+
+                        tlEtPasswordConfirm.requestFocus();
 
                     } else {
-
-                        tilPasswordLayout.setErrorEnabled(false);
-
+                        tilPasswordConfirmLayout.setErrorEnabled(false);
                     }
 
                     break;
+                }
 
             }
 
@@ -126,9 +145,11 @@ public class SignupPage extends AppCompatActivity {
 
     }
 
-    public static boolean isPasswordValid(String password) {
+    public static boolean isPasswordValid(String password, String password_confirm) {
 
-        return !TextUtils.isEmpty(password) && password.trim().length() == 8;
+        boolean v = !TextUtils.isEmpty(password) && !TextUtils.isEmpty(password_confirm) && password.equals(password_confirm);
+        Log.i("LE PASSWORD SONO: ", String.valueOf(v));
+        return v;
 
     }
 
