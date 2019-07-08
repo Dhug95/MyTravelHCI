@@ -45,6 +45,7 @@ public class EditPayment extends AppCompatActivity {
 
     public void goToSplit(View view){
         Intent intent = new Intent(this, CostSplitActivity.class);
+        intent.putExtra("edited", true);
         startActivity(intent);
     }
 }

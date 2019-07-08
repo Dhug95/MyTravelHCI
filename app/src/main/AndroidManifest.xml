@@ -9,11 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shrine">
-        <activity android:name=".activity.EditPayment" android:exported="true"
+        <activity
+            android:name=".activity.EditPayment"
+            android:exported="true"
             android:parentActivityName=".activity.Payment_Recap"></activity>
         <activity
             android:name=".activity.Payment_Recap"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".activity.TripPageActivity" />
         <activity
             android:name=".activity.PayDebtActivity"
             android:parentActivityName=".activity.TripPageActivity" />

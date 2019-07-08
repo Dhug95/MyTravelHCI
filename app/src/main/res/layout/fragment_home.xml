@@ -13,44 +13,136 @@
         tools:context=".fragment.HomeFragment">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:id="@+id/globe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_globe"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/scritta"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:src="@drawable/scritta"
-            android:layout_marginBottom="16dp"/>
+            app:layout_constraintBottom_toBottomOf="@id/globe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/globe"
+            app:layout_constraintTop_toTopOf="@id/globe" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="2dp"
-            android:layout_height="3dp"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.30" />
+        <View
+            android:id="@+id/first_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/hintGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/globe" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="2dp"
-            android:layout_height="3dp"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.10" />
-
-        <com.google.android.material.card.MaterialCardView
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/shortcuts_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="25dp"
-            android:paddingBottom="16dp"
-            app:cardCornerRadius="5dp"
-            app:cardUseCompatPadding="true"
-            app:layout_constraintBottom_toBottomOf="@id/guideline2"
-            app:layout_constraintTop_toTopOf="@id/guideline">
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/first_line">
 
-            <include layout="@layout/shortcuts_card_content" />
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/tickets_192"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/short_text" />
 
-        </com.google.android.material.card.MaterialCardView>
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tickets"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/imageButton2"
+                app:layout_constraintStart_toStartOf="@+id/imageButton2"
+                app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/hotel"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+                app:layout_constraintStart_toEndOf="@+id/imageButton2"
+                app:layout_constraintTop_toBottomOf="@id/short_text" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Hotels"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/imageButton3"
+                app:layout_constraintStart_toStartOf="@+id/imageButton3"
+                app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
+
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/money_192"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageButton3"
+                app:layout_constraintTop_toBottomOf="@id/short_text" />
+
+            <TextView
+                android:id="@+id/conversion_text"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Conversion"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/imageButton4"
+                app:layout_constraintStart_toStartOf="@+id/imageButton4"
+                app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+
+            <TextView
+                android:id="@+id/short_text"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_lightning"
+                android:drawablePadding="8dp"
+                android:text="Quick links"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@id/imageButton3"
+                app:layout_constraintStart_toStartOf="@id/imageButton3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/rome_card"
@@ -63,7 +155,8 @@
             app:cardUseCompatPadding="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shortcuts_card">
+            app:layout_constraintTop_toBottomOf="@+id/shortcuts_card"
+            app:layout_goneMarginTop="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,8 +164,8 @@
                 android:layout_gravity="center"
                 android:background="?attr/selectableItemBackground"
                 android:clickable="true"
-                android:onClick="goToTrip"
                 android:focusable="true"
+                android:onClick="goToTrip"
                 android:orientation="vertical">
 
                 <ImageView
@@ -127,7 +220,6 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:focusable="true"

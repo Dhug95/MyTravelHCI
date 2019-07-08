@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.example.mytravelhci.R;
+import com.google.android.material.button.MaterialButton;
 
 public class CostSplitActivity extends AppCompatActivity {
 
@@ -23,7 +25,7 @@ public class CostSplitActivity extends AppCompatActivity {
     private TextView price2;
     private TextView price3;
 
-    private final static float total = 30.f;
+    private final static float total = 63.f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,18 @@ public class CostSplitActivity extends AppCompatActivity {
         // Enable the Up button
         ab.setHomeAsUpIndicator(upArrow);
         ab.setDisplayHomeAsUpEnabled(true);
+
+        Intent intent = getIntent();
+        boolean edited = intent.getBooleanExtra("edited", false);
+        if (edited) {
+            mebox.setChecked(true);
+            user2box.setChecked(true);
+            user3box.setChecked(true);
+            selectAllBox.setChecked(true);
+            updatePrice(selectAllBox);
+            MaterialButton addButton = findViewById(R.id.doneBtn);
+            addButton.setText("Save changes");
+        }
     }
 
     public void selectEveryone(View view) {
@@ -107,5 +121,11 @@ public class CostSplitActivity extends AppCompatActivity {
             price3.setTextColor(getColor(R.color.hintGray));
 
         }
+    }
+
+    public void goToPayRecap(View view) {
+        Intent intent = new Intent(this, Payment_Recap.class);
+        intent.putExtra("added", true);
+        startActivity(intent);
     }
 }

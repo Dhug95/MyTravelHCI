@@ -106,6 +106,23 @@ public class TripPageActivity extends AppCompatActivity {
             }
         }
 
+        boolean pay_deleted = intent.getBooleanExtra("pay_deleted", false);
+        if (pay_deleted) {
+            Snackbar mySnackbar = Snackbar.make(findViewById(R.id.coordinator_logged),
+                    "Payment deleted.", Snackbar.LENGTH_SHORT);
+            mySnackbar.getView().setBackgroundResource(R.color.customGreen);
+            mySnackbar.show();
+        }
+
+        boolean debt_paid = intent.getBooleanExtra("debt_paid", false);
+        if (debt_paid) {
+            Snackbar mySnackbar = Snackbar.make(findViewById(R.id.coordinator_logged),
+                    "You paid your debt.", Snackbar.LENGTH_SHORT);
+            mySnackbar.getView().setBackgroundResource(R.color.customGreen);
+            mySnackbar.show();
+        }
+
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -183,5 +200,10 @@ public class TripPageActivity extends AppCompatActivity {
                 })
                 .show();
         ad.getButton(ad.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.customRed));
+    }
+
+    public void goPayRecap(View view) {
+        Intent intent = new Intent(this, Payment_Recap.class);
+        startActivity(intent);
     }
 }
