@@ -12,6 +12,9 @@
         <activity android:name=".activity.Payment_Recap"
             android:exported="true"></activity>
         <activity
+            android:name=".activity.PayDebtActivity"
+            android:parentActivityName=".activity.TripPageActivity"></activity>
+        <activity
             android:name=".activity.CostSplitActivity"
             android:parentActivityName=".activity.AddPaymentActivity" />
         <activity
@@ -21,11 +24,14 @@
         <activity
             android:name=".activity.TripPageActivity"
             android:exported="true"
+            android:launchMode="singleTop"
             android:parentActivityName=".activity.LoggedHomeActivity" />
         <activity
             android:name=".activity.Documentation"
             android:exported="true" />
-        <activity android:name=".activity.LoggedHomeActivity" />
+        <activity
+            android:name=".activity.LoggedHomeActivity"
+            android:launchMode="singleTop" />
         <activity
             android:name=".activity.NotLoggedHomeActivity"
             android:exported="true" />

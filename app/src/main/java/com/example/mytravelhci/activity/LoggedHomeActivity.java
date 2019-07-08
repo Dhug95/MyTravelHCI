@@ -113,8 +113,11 @@ public class LoggedHomeActivity extends AppCompatActivity {
             mySnackbar.getView().setBackgroundResource(R.color.customGreen);
             mySnackbar.show();
         }
+    }
 
-
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
     }
 
     @Override
@@ -153,6 +156,7 @@ public class LoggedHomeActivity extends AppCompatActivity {
     private void setFragment(Fragment newFragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, newFragment);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 

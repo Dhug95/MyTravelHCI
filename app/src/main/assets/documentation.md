@@ -22,7 +22,7 @@ The main page of the application is composed by 3 tabs, which can be navigated b
 
 - **Profile**: where you can find your information such as your **username**, your **email**, your **profile picture** etc...
 
-![picture](my_profile.png)
+![picture](my_profile.jpg)
 
 Moreover, an hidden side menu is always present, which other than the shortcut just mentioned, it also contains a quick **logout** button, an **help** button which brings you to this documentation and a **contact us** button which allows you to directly contact the developers via email.
 
@@ -56,7 +56,7 @@ As already said in the **Add a Trip** section, you can always edit trip informat
 
 Tap on the *3 dots* on the top-right corner and select *Edit*.
 
-![picture](edit_trip.png)
+![picture](goto_edit_trip.png)
 
 Now you are on a page very similar to the one when you add a trip:
 
@@ -64,9 +64,9 @@ Now you are on a page very similar to the one when you add a trip:
 
 Once you get to the Edit trip page, you can edit each field in the same way you compiled it when you added the trip.
 
-Once you have done, tap the *check* on the top-right and you are done:
+Once you have done, tap the *apply changes* button at the bottom of the page:
 
-![picture](edit_trip_page_check.png)
+![picture](edit_trip_button.png)
 
 # Delete a trip
 
@@ -74,7 +74,7 @@ In order to delete a trip, go to *My trips* tab of the homepage and tap to the t
 
 Once you are in the *Trip Page*, tap on the *3 dots* on the top-right and then tap **Delete**.
 
-![picture](delete_trip.png)
+![picture](goto_delete_trip.png)
 
 A pop-up will appear, asking you a confirmation for deleting the trip, tap on the **red delete button** and you are done:
 
@@ -114,7 +114,7 @@ In order to add a payment, go to the **Payments** tab of a Trip Page and go to t
 
 Then, insert the *description* (e.g. domò sushi), the *amout*, the *currency*, and the *date*, then tap the *continue* button:
 
-![picture](add_payment_2.png)
+![](add_payment_2.png)
 
 Finally, you will get to a page where it is displayed the list of participants of the trip the current payments belongs to. If the payment you are adding is a personal payment, just select yourself (selected by default), otherwise if it is a group payment tap the *checkbox* near each user that will be a participant of that payment, the amount splitting will be done automatically and shown near each user you select. In order to select all the participants in a single tap, check the *Select all* checkbox, in order to cancel all the selections, tap the *Reset* button.
 
