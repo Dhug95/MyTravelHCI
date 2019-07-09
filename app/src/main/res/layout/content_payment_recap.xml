@@ -10,71 +10,92 @@
     tools:showIn="@layout/activity_payment__recap">
 
 
-
     <ImageView
         android:id="@+id/credit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_credit_card"
-        android:scaleType="fitCenter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="4dp"
-        />
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_credit_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:textColor="@color/hintGray"
+        android:id="@+id/hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:gravity="center"
         android:text="Total:"
         android:textAlignment="center"
-        app:layout_constraintTop_toTopOf="@id/credit"
+        android:textColor="@color/hintGray"
         app:layout_constraintBottom_toTopOf="@id/total"
         app:layout_constraintStart_toEndOf="@id/credit"
-        android:layout_marginStart="12dp"
-        android:id="@+id/hint"/>
+        app:layout_constraintTop_toTopOf="@id/credit" />
+
+    <TextView
+        android:id="@+id/category_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Category:"
+        android:layout_marginTop="4dp"
+        android:textAlignment="center"
+        android:textColor="@color/hintGray"
+        app:layout_constraintBottom_toTopOf="@id/category_text"
+        app:layout_constraintStart_toStartOf="@id/credit"
+        app:layout_constraintTop_toBottomOf="@id/credit" />
+
+    <TextView
+        android:id="@+id/category_text"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Food and drinks"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/chart_card"
+        app:layout_constraintStart_toStartOf="@id/credit"
+        app:layout_constraintTop_toBottomOf="@id/category_label" />
 
     <TextView
         android:id="@+id/total"
         style="@style/TextAppearance.MaterialComponents.Headline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:gravity="center"
         android:text="€63.00"
         android:textAlignment="center"
-        app:layout_constraintStart_toEndOf="@id/credit"
         app:layout_constraintBottom_toBottomOf="@id/credit"
-        android:layout_marginStart="12dp" />
+        app:layout_constraintStart_toEndOf="@id/credit" />
 
 
     <ImageView
         android:id="@+id/calendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_calendar"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toStartOf="@id/date"
-        app:layout_constraintTop_toTopOf="parent"
         android:paddingEnd="8dp"
-
-        />
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_calendar"
+        app:layout_constraintEnd_toStartOf="@id/date"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/date"
         style="@style/TextAppearance.MaterialComponents.Headline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
         android:gravity="center"
         android:text="24/04/2019"
-        android:layout_marginTop="16dp"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/calendar"
-        app:layout_constraintTop_toTopOf="@id/calendar"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="4dp"/>
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/calendar" />
 
 
     <com.google.android.material.card.MaterialCardView
@@ -82,13 +103,13 @@
         style="@style/CardView.Light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:elevation="25dp"
         app:cardCornerRadius="5dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/credit">
+        app:layout_constraintTop_toBottomOf="@id/category_text">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -123,8 +144,8 @@
                     android:gravity="center"
                     android:text="Me"
                     android:textStyle="bold"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/price_1"
@@ -161,7 +182,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
-
 
 
                 <TextView
@@ -259,7 +279,6 @@
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

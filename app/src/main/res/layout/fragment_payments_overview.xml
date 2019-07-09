@@ -36,16 +36,27 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:id="@+id/total_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:gravity="start"
-                android:text="450€"
-                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Total:"
+                android:textAlignment="center"
+                android:textColor="@color/hintGray"
                 app:layout_constraintEnd_toEndOf="@id/piechart"
                 app:layout_constraintStart_toStartOf="@id/piechart"
                 app:layout_constraintTop_toBottomOf="@id/piechart" />
+
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="450€"
+                app:layout_constraintEnd_toEndOf="@id/total_text"
+                app:layout_constraintStart_toStartOf="@id/total_text"
+                app:layout_constraintTop_toBottomOf="@id/total_text" />
 
             <TextView
                 android:id="@+id/cat_1"
@@ -54,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_dot_first"
                 android:drawablePadding="8dp"
-                android:text="Category 1"
+                android:text="Food and drinks"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/piechart"
                 app:layout_constraintTop_toTopOf="@id/piechart" />
@@ -66,10 +77,9 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_dot_second"
                 android:drawablePadding="8dp"
-                android:text="Category 2"
+                android:text="Transportation"
                 app:layout_constraintBottom_toTopOf="@id/cat_3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/piechart"
+                app:layout_constraintStart_toStartOf="@id/cat_1"
                 app:layout_constraintTop_toBottomOf="@id/cat_1" />
 
             <TextView
@@ -79,10 +89,9 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_dot_third"
                 android:drawablePadding="8dp"
-                android:text="Category 3"
+                android:text="Other"
                 app:layout_constraintBottom_toBottomOf="@id/piechart"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/piechart" />
+                app:layout_constraintStart_toStartOf="@id/cat_1" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

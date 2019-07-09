@@ -45,7 +45,7 @@ public class SignupPage extends AppCompatActivity {
                 tilPasswordConfirmLayout, tlEtPasswordConfirm));
 
         MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.currencySpinner);
-        spinner.setItems("Select", "EUR", "JPY", "USD", "GBP");
+        spinner.setItems("EUR", "JPY", "USD", "GBP");
         spinner.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
         Toolbar toolbar = findViewById(R.id.toolbar);

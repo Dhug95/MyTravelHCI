@@ -22,8 +22,12 @@ public class AddPaymentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_payment);
 
         MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.currencySpinner);
-        spinner.setItems("Select", "EUR", "JPY", "USD", "GBP");
+        spinner.setItems("EUR", "JPY", "USD", "GBP");
         spinner.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+        MaterialSpinner category_spinner = (MaterialSpinner) findViewById(R.id.categorySpinner);
+        category_spinner.setItems("Food and drinks", "Transportation", "Shopping", "Other");
+        category_spinner.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -26,7 +26,7 @@ public class PayDebtActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pay_debt);
 
         MaterialSpinner spinner = (MaterialSpinner) findViewById(R.id.currencySpinner);
-        spinner.setItems("Select", "EUR", "JPY", "USD", "GBP");
+        spinner.setItems("EUR", "JPY", "USD", "GBP");
         spinner.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
         receiver = findViewById(R.id.receiver);
