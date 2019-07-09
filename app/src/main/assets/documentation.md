@@ -1,5 +1,20 @@
+# Table of Contents
+1. [Overview](#overview)
+2. [Get Started](#get started)
+3. [Your Profile](#your profile)
+4. [Add a trip](#add a trip)
+5. [Edit a trip](#edit a trip)
+6. [Delete a trip](#delete a trip)
+7. [Trip payments overview](#trip payments overview)
+8. [Trip payments history](#trip payments history)
+9. [Add a payment](#add a payment)
+10. [Pay off a debt](#pay off a debt)
+11. [Payment page](#payment page)
+12. [Edit/Delete a payment](#edit/delete a payment)
+
+
 # Overview
-The main idea of **myTravel**  is to provide to travelers an intuitive and easy-to-use application to let  them  to keep track of all the payments done  during a trip, in order to always be up to date with their  budget. In particular, it can be used  alone or in group, and in this  latter  case myTravel  offers the possibility  to split some payments among the participants so that  anyone can get  rid of keeping bills with each  other.
+The main idea of **myTravel**  is to provide to travelers an intuitive and easy-to-use application to let them to keep track of all the payments done during a trip, in order to always be up to date with their  budget. In particular, it can be used  alone or in group, and in this  latter  case myTravel  offers the possibility  to split some payments among the participants so that  anyone can get  rid of keeping bills with each  other.
 
 *myTravel* will be useful for:
  -   **Alone Holiday Traveler**, which accounts all his/her spendings into the app in order to have an idea of his/her balance
@@ -11,18 +26,18 @@ The main idea of **myTravel**  is to provide to travelers an intuitive and easy-
 # Get started
 The main page of the application is composed by 3 tabs, which can be navigated by means of the **lower Navigation Bar**:
 
-- **Home**: where you find the most important shortcuts for searching tickets and accomodations, for the currency conversion tool and finally for the last trip you have added;
+- **Home**: where you find the most important shortcuts for searching tickets and accomodations, for the currency conversion tool, for the last trip you have added and finally a quick *add new trip* button for creating a new trip;
 
 ![picture](home_logged.png)
 
-- **My trips**: where you find all the trips you have added to the application so far;
+- **My trips**: where you find a list of all the trips you have added to the application so far;
 
 ![picture](my_trips.png)
 
 
 - **Profile**: where you can find your information such as your **username**, your **email**, your **profile picture** etc...
 
-![picture](my_profile.jpg)
+![picture](my_profile.png)
 
 Moreover, an hidden side menu is always present, which other than the shortcut just mentioned, it also contains a quick **logout** button, an **help** button which brings you to this documentation and a **contact us** button which allows you to directly contact the developers via email.
 
@@ -42,7 +57,7 @@ You will find the email and the username that identify you (which cannot be chan
 
 **Note**: *all the informations you will insert about a trip can be changed at any time.*
 
-Adding a trip is quite simple. Either you click on the *Add a trip* button in the homepage or you click the *floating button* in *My trips* page. You will be presented with the following page:
+Adding a trip is quite simple. Either you click on the quick *Add new trip* button in the homepage or you click the *floating button* in *My trips* page. You will be presented with the following page:
 
 ![picture](add_trip.png)
 
@@ -92,7 +107,7 @@ you will reach the payments tab:
 
 The **Payments** tab is composed by two sections: **Overview** and **History**.
 
-You are now in the Overview section, where you can find a diagram showing how much you spent for that trip so far. Then you find the list of participants of the trip, and for each of them, if you owe to him a certain amout, a corresponding **red amount** is displayed below him, while if he owe to you a certain amount, a corresponding **green amount** is displayed below him.
+You are now in the Overview section, where you can find a diagram showing how much you spent for that trip so far, how much you spent for each cathegory (food, shopping, ...) and a colourful cake diagram that recaps these spendings. <u>Then you find the list of participants of the trip, and for each of them, if you owe to him a certain amout, a corresponding **red amount** is displayed below him, while if he owe to you a certain amount, a corresponding **green amount** is displayed below him</u>.
 
 # Trip payments history
 
@@ -108,11 +123,11 @@ Each payment in the list is displayed in terms of an icon, a name and an amout. 
 
 # Add a payment
 
-In order to add a payment, go to the **Payments** tab of a Trip Page and go to the **Overview** section. You will see a floating button on the bottom-left of the page. Tap on it and select *Add new payment*:
+In order to add a payment, go to the **Payments** tab of a Trip Page. You will see a blue floating button on the bottom-right of the page. Tap on it and select *Add new payment*:
 
 ![picture](add_payment_1.png)
 
-Then, insert the *description* (e.g. domò sushi), the *amout*, the *currency*, and the *date*, then tap the *continue* button:
+Then, insert the *description* (e.g. domò sushi), the *amout*, the *category*, the *currency* (or tap *Get from location* if you want the app automatically gets the currency inspecting your location), and the *date*, then tap the *continue* button:
 
 ![](add_payment_2.png)
 
@@ -154,14 +169,14 @@ You will get to a page where a payment recap is show, in terms of description, t
 
 # Edit/Delete a payment
 
-You can always return to a payment that has been done for a trip in order to edit its details (e.g. the amount, the participants and so on). In order to edit it, just go to the payment page, you will see a *pencil icon* on the top right, tap on it:
+You can always return to a payment that has been done for a trip in order to edit its details (e.g. the amount, the participants and so on). In order to edit it, just go to the payment page, you will see a *3-dots icon* on the top right, tap on it and then on *Edit*:
 
 ![picture](goto_edit_payment.png)
 
 Now it will be displayed a page identical to the one when you add a payment, so as you inserted the fields of that payment in the same way you can edit them. A for the *Add payment* steps, you have to tap on the **continue** button and finally, in the last page, on the **done** button.
 
-If you instead want to **delete** a payment, it is sufficient, in the *Edit payment* page, to tap on the *trash icon* on the top right, and tap on the **red delete button** in the dialog that pops up:
+If you instead want to **delete** a payment, in the page of the target *payment* tap on the *3-dots icon* on the top-right, then on *Delete*:
 
-![picture](delete_payment.png)
+![picture](goto_delete_payment.png)
 
-+
+A pop-up will appear asking you if you want to really delete that payment, tap on the red *Delete* button and you are done
