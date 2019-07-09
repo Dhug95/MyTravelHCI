@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_dot_first"
                 android:drawablePadding="8dp"
-                android:text="Food and drinks"
+                android:text="Food/drinks: 315€ (70%)"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/piechart"
                 app:layout_constraintTop_toTopOf="@id/piechart" />
@@ -77,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_dot_second"
                 android:drawablePadding="8dp"
-                android:text="Transportation"
+                android:text="Shopping: 67.50€ (15%)"
                 app:layout_constraintBottom_toTopOf="@id/cat_3"
                 app:layout_constraintStart_toStartOf="@id/cat_1"
                 app:layout_constraintTop_toBottomOf="@id/cat_1" />
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_dot_third"
                 android:drawablePadding="8dp"
-                android:text="Other"
+                android:text="Other: 67.50€ (15%)"
                 app:layout_constraintBottom_toBottomOf="@id/piechart"
                 app:layout_constraintStart_toStartOf="@id/cat_1" />
 
