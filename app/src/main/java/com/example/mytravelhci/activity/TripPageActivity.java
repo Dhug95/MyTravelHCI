@@ -154,7 +154,7 @@ public class TripPageActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.trip_menu, menu);
+        getMenuInflater().inflate(R.menu.trip_menu_dio, menu);
         return true;
     }
 
