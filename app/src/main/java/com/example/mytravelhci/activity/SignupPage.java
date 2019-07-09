@@ -1,10 +1,12 @@
 package com.example.mytravelhci.activity;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -69,9 +71,22 @@ public class SignupPage extends AppCompatActivity {
     }
 
     public void startHome(View view) {
-        Intent intent = new Intent(this, LoggedHomeActivity.class);
-        intent.putExtra("registered", true);
-        startActivity(intent);
+        final Context thisContext = this;
+        AlertDialog ad = new AlertDialog.Builder(this)
+                .setTitle("Confirm data")
+                .setMessage("Do you want to create an account with these data?\nUsername: Keanu Reeves\nEmail: keanu.reeves@gmail.com")
+                .setPositiveButton("Cancel", null)
+                .setNegativeButton("Create account", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog,
+                                        int which) {
+                        Intent intent = new Intent(thisContext, LoggedHomeActivity.class);
+                        intent.putExtra("registered", true);
+                        thisContext.startActivity(intent);
+                    }
+                })
+                .show();
+        ad.getButton(ad.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.customGreen));
     }
 
 

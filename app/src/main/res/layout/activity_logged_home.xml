@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@color/statusColor"
-                android:text="MyTravel"
+                android:text="Main"
                 android:textAlignment="center"
                 android:textColor="@color/md_white_1000"
                 android:textStyle="bold" />

@@ -14,7 +14,7 @@
         style="@style/TextAppearance.MaterialComponents.Headline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="How is €30.00 split?"
+        android:text="How is €63.00 split?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -256,6 +256,7 @@
         android:text="Add payment"
         android:textColor="@color/statusColor"
         app:cornerRadius="50dp"
+        android:onClick="goToPayRecap"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
