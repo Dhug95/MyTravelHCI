@@ -27,7 +27,7 @@ public class ProfileFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
 
         MaterialSpinner spinner = (MaterialSpinner) v.findViewById(R.id.currencySpinner);
-        spinner.setItems("Select", "EUR", "JPY", "USD", "GBP");
+        spinner.setItems("EUR", "JPY", "USD", "GBP");
         spinner.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
         spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {

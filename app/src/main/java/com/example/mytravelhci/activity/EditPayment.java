@@ -22,6 +22,11 @@ public class EditPayment extends AppCompatActivity {
         spinner.setItems("EUR", "USD", "GBP", "JPY");
         spinner.setText("EUR");
 
+        MaterialSpinner category_spinner = (MaterialSpinner) findViewById(R.id.categorySpinner);
+        category_spinner.setItems("Select", "Food and drinks", "Transportation", "Shopping", "Other");
+        category_spinner.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        category_spinner.setText("Food and drinks");
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -43,7 +48,7 @@ public class EditPayment extends AppCompatActivity {
         newFragment.show(getSupportFragmentManager(), iddio.toString());
     }
 
-    public void goToSplit(View view){
+    public void goToSplit(View view) {
         Intent intent = new Intent(this, CostSplitActivity.class);
         intent.putExtra("edited", true);
         startActivity(intent);
