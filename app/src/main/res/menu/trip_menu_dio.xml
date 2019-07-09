@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.TripPageActivity">
+
+    <item
+        android:id="@+id/action_edit_trip"
+        android:orderInCategory="10"
+        android:title="Edit trip"
+        android:onClick="goToEdit"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_delete_trip"
+        android:orderInCategory="20"
+        android:title="Delete trip"
+        android:onClick="deleteTrip"
+        app:showAsAction="never" />
+
+</menu>
