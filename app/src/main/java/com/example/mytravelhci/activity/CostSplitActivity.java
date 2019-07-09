@@ -32,6 +32,8 @@ public class CostSplitActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cost_split);
 
+        //Carmine
+
         mebox = findViewById(R.id.me_checkbox);
         user2box = findViewById(R.id.user2_checkbox);
         user3box = findViewById(R.id.user3_checkbox);
