@@ -2,6 +2,7 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="@color/customGray">
@@ -13,34 +14,25 @@
         tools:context=".fragment.HomeFragment">
 
         <ImageView
-            android:id="@+id/globe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_globe"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
             android:id="@+id/scritta"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:src="@drawable/scritta"
-            app:layout_constraintBottom_toBottomOf="@id/globe"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/globe"
-            app:layout_constraintTop_toTopOf="@id/globe" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+             />
 
         <View
             android:id="@+id/first_line"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginTop="32dp"
             android:background="@color/hintGray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/globe" />
+            tools:layout_editor_absoluteY="134dp"
+            app:layout_constraintTop_toBottomOf="@id/scritta"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/shortcuts_card"
