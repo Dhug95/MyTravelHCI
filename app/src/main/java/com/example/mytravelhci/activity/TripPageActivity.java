@@ -206,4 +206,9 @@ public class TripPageActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Payment_Recap.class);
         startActivity(intent);
     }
+
+    public void goToDebt(View view) {
+        Intent intent = new Intent(this, PayDebtActivity.class);
+        startActivity(intent);
+    }
 }
